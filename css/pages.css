@@ -103,8 +103,58 @@
   backdrop-filter: blur(10px);
 }
 
+.why-card .icon { margin-bottom: 16px; color: var(--accent); }
 .why-card h3 { font-family: var(--font-body); font-size: 22px; font-weight: 600; margin-bottom: 10px; }
 .why-card p { color: var(--muted); font-size: 15px; margin: 0; }
+
+/* ---------- HOME: Stats bar ---------- */
+
+.stats-section { background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.stats-bar .stat-block { text-align: center; }
+.stats-bar .stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+.stats-bar .stat-label { color: var(--muted); font-size: 15px; }
+
+/* ---------- HOME: Industries we power ---------- */
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.industry-card {
+  background: var(--card-grad);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.industry-card .icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(34, 211, 238, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.industry-card h3 { font-family: var(--font-body); font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+.industry-card p { color: var(--muted); font-size: 13px; margin: 0; }
 
 /* ---------- HOME: Featured work ---------- */
 
@@ -327,7 +377,8 @@
   .home-hero-grid, .services-hero-grid, .work-grid, .about-grid, .about-lower,
   .courses-grid, .contact-hero-top { grid-template-columns: 1fr; }
   .home-hero-media { order: -1; }
-  .why-grid, .contact-offices, .contact-extra, .tutors-grid { grid-template-columns: 1fr; }
+  .why-grid, .contact-offices, .contact-extra, .tutors-grid, .industries-grid { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .footer-offices { grid-template-columns: repeat(2, 1fr); }
   .mission-vision { grid-template-columns: 1fr; }
   .services-detail-bg { display: none; }
