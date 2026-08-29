@@ -32,7 +32,7 @@
         <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+        <a href="contact.html#demo-form" class="btn btn-primary">Book a Demo</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
 </svg></button>
@@ -99,16 +99,76 @@
         </div>
       </div>
 
-      <div class="contact-form-section">
-        <h3>Connect With Us</h3>
-        <p>Have a question or are you ready to launch your fleet? Fill out our contact form or reach us directly via email or phone. We&rsquo;re excited to get your vehicles on the road!</p>
+      <div class="contact-form-section" id="demo-form">
+        <h3>Book a Demo</h3>
+        <p>Tell us a bit about your fleet and one of our mobility specialists will reach out to schedule a live walkthrough of the platform &mdash; usually within one business day.</p>
         <form class="contact-form">
-          <label class="visually-hidden" for="c-name">Name</label>
-          <input id="c-name" name="name" type="text" placeholder="Name" required>
-          <label class="visually-hidden" for="c-email">Email address</label>
-          <input id="c-email" name="email" type="email" placeholder="Email address" required>
-          <label class="visually-hidden" for="c-message">Message</label>
-          <textarea id="c-message" name="message" placeholder="Message" required></textarea>
+          <div class="form-row">
+            <div>
+              <label class="visually-hidden" for="d-first-name">First name</label>
+              <input id="d-first-name" name="first_name" type="text" placeholder="First name" required>
+            </div>
+            <div>
+              <label class="visually-hidden" for="d-last-name">Last name</label>
+              <input id="d-last-name" name="last_name" type="text" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label class="visually-hidden" for="d-email">Work email</label>
+              <input id="d-email" name="email" type="email" placeholder="Work email" required>
+            </div>
+            <div>
+              <label class="visually-hidden" for="d-phone">Phone number</label>
+              <input id="d-phone" name="phone" type="tel" placeholder="Phone number" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label class="visually-hidden" for="d-company">Company / fleet name</label>
+              <input id="d-company" name="company" type="text" placeholder="Company / fleet name" required>
+            </div>
+            <div>
+              <label class="visually-hidden" for="d-fleet-size">Number of vehicles</label>
+              <select id="d-fleet-size" name="fleet_size" required>
+                <option value="" disabled selected>Number of vehicles</option>
+                <option value="1-10">1&ndash;10</option>
+                <option value="11-50">11&ndash;50</option>
+                <option value="51-200">51&ndash;200</option>
+                <option value="200+">200+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label class="visually-hidden" for="d-vehicle-type">Primary vehicle type</label>
+              <select id="d-vehicle-type" name="vehicle_type" required>
+                <option value="" disabled selected>Primary vehicle type</option>
+                <option value="scooters">Scooters</option>
+                <option value="e-bikes">E-Bikes</option>
+                <option value="mopeds">Mopeds</option>
+                <option value="golf-carts-lsvs">Golf Carts &amp; LSVs</option>
+                <option value="multiple">Multiple / Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="visually-hidden" for="d-heard">How did you hear about us?</label>
+              <select id="d-heard" name="heard_about" required>
+                <option value="" disabled selected>How did you hear about us?</option>
+                <option value="social-media">Social Media</option>
+                <option value="referral">From a Friend / Referral</option>
+                <option value="google">Google Search</option>
+                <option value="conference">Conference / Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <label class="visually-hidden" for="d-message">What can we help with?</label>
+          <textarea id="d-message" name="message" placeholder="What can we help with?" required></textarea>
+          <label class="form-check">
+            <input type="checkbox" name="consent" required>
+            <span>I agree to Spark Mobility&rsquo;s <a href="#">Privacy Policy</a> and consent to receive updates about the platform. You can unsubscribe at any time.</span>
+          </label>
           <button type="submit" class="btn btn-primary">Book a Platform Demo <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="3.5" y="5" width="17" height="16" rx="2" stroke="#0B1220" stroke-width="1.4"/>
   <path d="M3.5 9.5H20.5" stroke="#0B1220" stroke-width="1.4"/>
