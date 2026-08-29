@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Spark Mobility — page-specific sections
+   Trekk Mobility — page-specific sections
    ========================================================================== */
 
 /* ---------- Shared: full-bleed photo hero ---------- */
@@ -36,6 +36,158 @@
 }
 .photo-hero .stat-pill .stat-num { color: #FFFFFF; }
 .photo-hero .stat-pill .stat-label { color: #C6D3D6; }
+
+/* ---------- Shared: Product Showcase (device mockups + carousels) ---------- */
+
+.showcase { overflow: visible; }
+.showcase-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+.showcase-copy .section-lede { max-width: 460px; margin: 20px 0 32px; }
+.showcase-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  box-shadow: var(--shadow-sm);
+}
+.showcase-badge .dot-ind { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+.showcase-devices {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px 0 56px;
+}
+
+.device-laptop { width: 100%; max-width: 620px; }
+.device-phone {
+  position: absolute;
+  right: 2%;
+  bottom: 0;
+  width: 176px;
+  z-index: 3;
+}
+
+/* Carousel core (shared by both devices) */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0B1220;
+  overflow: hidden;
+}
+.carousel-track { position: relative; width: 100%; height: 100%; }
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+.carousel-slide.is-active { opacity: 1; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carousel-dots .dot.is-active { background: var(--accent); transform: scale(1.35); }
+.carousel-dots .dot:hover { background: var(--accent-2); }
+
+/* Laptop frame */
+.laptop-mockup { width: 100%; }
+.laptop-screen {
+  position: relative;
+  background: #14171F;
+  border-radius: 16px 16px 3px 3px;
+  padding: 14px 14px 20px;
+  box-shadow: 0 30px 70px rgba(11, 18, 32, 0.28);
+}
+.laptop-camera {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2A2E38;
+}
+.laptop-screen .carousel { aspect-ratio: 8 / 5; border-radius: 4px; }
+.laptop-base {
+  height: 14px;
+  margin: 0 -22px;
+  background: linear-gradient(180deg, #E4E7EB 0%, #C3C8CF 100%);
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+.laptop-base::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 5px;
+  background: #A8AEB6;
+  border-radius: 0 0 6px 6px;
+}
+
+/* iPhone frame */
+.iphone-mockup { width: 100%; }
+.iphone-frame {
+  position: relative;
+  background: #14171F;
+  border-radius: 34px;
+  padding: 10px;
+  box-shadow: 0 20px 46px rgba(11, 18, 32, 0.3);
+}
+.iphone-frame .carousel { aspect-ratio: 393 / 852; border-radius: 26px; }
+.iphone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 20px;
+  background: #14171F;
+  border-radius: 12px;
+  z-index: 5;
+}
+
+@media (max-width: 900px) {
+  .showcase-inner { grid-template-columns: 1fr; }
+  .showcase-devices {
+    flex-direction: column;
+    gap: 36px;
+    padding-bottom: 0;
+  }
+  .device-laptop { max-width: 480px; }
+  .device-phone { position: static; width: 200px; }
+}
 
 /* ---------- HOME: Hero ---------- */
 
