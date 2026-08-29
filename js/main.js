@@ -1,3 +1,15 @@
+function submitFormViaAjax(form, callback) {
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { Accept: 'application/json' }
+  }).then(function (res) {
+    callback(res.ok);
+  }).catch(function () {
+    callback(false);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
@@ -15,30 +27,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Newsletter subscribe (footer) - demo only, no backend
+  // Newsletter subscribe (footer) - submits to directors@trekkmobility.com
   document.querySelectorAll('.footer-subscribe').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var input = form.querySelector('input');
+      var input = form.querySelector('input[type="email"]');
       var btn = form.querySelector('button');
-      if (input && input.value) {
-        btn.textContent = 'Subscribed!';
-        input.value = '';
-        setTimeout(function () { btn.textContent = 'Subscribe'; }, 2500);
-      }
+      if (!input || !input.value) return;
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      submitFormViaAjax(form, function (ok) {
+        btn.disabled = false;
+        btn.textContent = ok ? 'Subscribed!' : 'Try again';
+        if (ok) form.reset();
+        setTimeout(function () { btn.textContent = originalText; }, 3000);
+      });
     });
   });
 
-  // Contact form - demo only, no backend
+  // Contact / demo form - submits to directors@trekkmobility.com
   var contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = contactForm.querySelector('button[type="submit"]');
       var original = btn.innerHTML;
-      btn.textContent = 'Message sent — we’ll be in touch';
-      contactForm.reset();
-      setTimeout(function () { btn.innerHTML = original; }, 3000);
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      submitFormViaAjax(contactForm, function (ok) {
+        btn.disabled = false;
+        btn.textContent = ok
+          ? 'Message sent — we’ll be in touch'
+          : 'Something went wrong — email us directly';
+        if (ok) contactForm.reset();
+        setTimeout(function () { btn.innerHTML = original; }, 4000);
+      });
     });
   }
 

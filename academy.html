@@ -287,9 +287,12 @@
         </div>
         <div class="footer-col">
           <h4>Speak To Our Experts</h4>
-          <form class="footer-subscribe">
+          <form class="footer-subscribe" action="https://formsubmit.co/directors@trekkmobility.com" method="POST">
+            <input type="hidden" name="_subject" value="New Newsletter Signup — Spark Mobility">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <label class="visually-hidden" for="footer-email">Your email</label>
-            <input id="footer-email" type="email" placeholder="your email" required>
+            <input id="footer-email" type="email" name="email" placeholder="your email" required>
             <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
           </form>
           <div class="social-row">
