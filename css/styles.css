@@ -189,10 +189,11 @@ h1, h2, h3 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: clamp(18px, 2.4vw, 32px);
   list-style: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav-links a { padding: 4px 0; border-bottom: 2px solid transparent; color: var(--ink); }
@@ -277,6 +278,8 @@ h1, h2, h3 {
 }
 
 .footer-brand p { color: #9AABAE; font-size: 14px; margin: 16px 0 32px; }
+.footer-brand .footer-tagline { font-size: 12px; margin: -20px 0 24px; line-height: 1.6; }
+.footer-brand .social-row { margin-top: 20px; }
 
 .footer-col h4 {
   font-family: var(--font-body);
