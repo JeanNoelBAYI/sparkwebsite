@@ -45,11 +45,16 @@
 
   <section class="section" style="padding-top:32px;">
     <div class="container">
+      <div class="currency-toggle" role="group" aria-label="Choose currency">
+        <button type="button" class="currency-btn is-active" data-currency="NGN" aria-pressed="true">&#8358; NGN</button>
+        <button type="button" class="currency-btn" data-currency="USD" aria-pressed="false">$ USD</button>
+      </div>
+      <p class="currency-note">USD prices are indicative. You&rsquo;ll be billed in your local currency &mdash; see our <a href="#local-currency">Local Currency Promise</a> below.</p>
       <div class="pricing-grid">
         <div class="pricing-card">
           <p class="eyebrow">For new mobility businesses</p>
           <h3>Trekk Start</h3>
-          <p class="price">&#8358;150,000<span>/month</span></p>
+          <p class="price"><span class="amount" data-ngn="&#8358;150,000" data-usd="$99">&#8358;150,000</span><span>/Scooter/month</span></p>
           <p class="price-note">Ideal for smaller fleets and pilot deployments. Recommended fleet: up to 50 vehicles.</p>
           <ul>
             <li>Branded rider app</li>
@@ -69,7 +74,7 @@
           <span class="badge">Most Popular</span>
           <p class="eyebrow">For growing mobility operators</p>
           <h3>Trekk Grow</h3>
-          <p class="price">&#8358;300,000<span>/month</span></p>
+          <p class="price"><span class="amount" data-ngn="&#8358;300,000" data-usd="$199">&#8358;300,000</span><span>/Scooter/month</span></p>
           <p class="price-note">Everything in Start, plus advanced tools. Recommended fleet: 51&ndash;250 vehicles.</p>
           <ul>
             <li>Operator mobile app</li>
@@ -125,7 +130,7 @@
     </div>
   </section>
 
-  <section class="section" style="background:var(--bg-raised); text-align:center;">
+  <section class="section" id="local-currency" style="background:var(--bg-raised); text-align:center;">
     <div class="container">
       <p class="eyebrow" style="justify-content:center; display:flex;">Local Currency Promise</p>
       <h2 class="display-xl" style="max-width:640px; margin:0 auto;">Pay in Your Currency</h2>

@@ -66,6 +66,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Pricing page - NGN / USD currency toggle
+  var currencyToggle = document.querySelector('.currency-toggle');
+  if (currencyToggle) {
+    var currencyButtons = Array.prototype.slice.call(currencyToggle.querySelectorAll('.currency-btn'));
+    var amounts = Array.prototype.slice.call(document.querySelectorAll('.price .amount'));
+
+    currencyButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var currency = btn.dataset.currency;
+        currencyButtons.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        amounts.forEach(function (el) {
+          var value = currency === 'USD' ? el.dataset.usd : el.dataset.ngn;
+          if (value) el.textContent = value;
+        });
+      });
+    });
+  }
+
   // Services page - interactive service list / detail panel
   var serviceList = document.querySelector('.service-list');
   var highlight = document.querySelector('.service-highlight');

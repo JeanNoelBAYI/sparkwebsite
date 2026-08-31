@@ -608,6 +608,35 @@
 
 /* ---------- Shared: pricing ---------- */
 
+.currency-toggle {
+  display: inline-flex;
+  margin: 0 auto;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+}
+.currency-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.currency-btn.is-active {
+  background: var(--accent);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+.currency-btn:not(.is-active):hover { color: var(--ink); }
+.currency-note { font-size: 13px; color: var(--dim); margin: 16px 0 0; }
+.currency-note a { color: var(--accent-2); text-decoration: underline; }
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
