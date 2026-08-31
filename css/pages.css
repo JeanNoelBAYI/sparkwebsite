@@ -560,3 +560,151 @@
   .home-stats { flex-direction: column; }
   .home-stats .stat-pill { width: 100%; }
 }
+
+/* ---------- SCOOTEASY PARTNER PAGES ---------- */
+
+.scooteasy-hero { min-height: 560px; }
+
+.scooteasy-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.scooteasy-copy {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.scooteasy-copy p:first-child { margin-top: 0; }
+
+.scooteasy-links-section {
+  background: var(--bg-raised);
+  border-top: 1px solid var(--border);
+}
+
+.scooteasy-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.scooteasy-link-card {
+  min-height: 230px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.scooteasy-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.scooteasy-link-card span {
+  color: var(--accent-2);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scooteasy-link-card strong {
+  display: block;
+  margin: 18px 0 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.scooteasy-link-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.legal-hero {
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-hero-inner {
+  max-width: 900px;
+}
+
+.legal-hero-inner p:last-child {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 680px;
+}
+
+.legal-document {
+  max-width: 900px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(28px, 5vw, 56px);
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-document h2 {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 34px 0 10px;
+}
+
+.legal-document h2:first-of-type { margin-top: 26px; }
+
+.legal-document p {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.legal-document a,
+.support-panel a {
+  color: var(--accent-2);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.support-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.support-panel h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.support-panel p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.account-delete-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 900px) {
+  .scooteasy-grid,
+  .scooteasy-links,
+  .support-panel { grid-template-columns: 1fr; }
+  .scooteasy-link-card { min-height: auto; }
+}
