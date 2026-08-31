@@ -492,7 +492,7 @@
   padding: 40px;
   box-shadow: var(--shadow-md);
 }
-.contact-offices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+.contact-offices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
 .contact-offices h4, .contact-extra h4 { font-weight: 700; font-size: 18px; margin: 0 0 12px; color: var(--ink); }
 .contact-offices p, .contact-extra p { font-size: 14px; color: var(--muted); margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
 .contact-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }

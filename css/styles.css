@@ -279,6 +279,14 @@ h1, h2, h3 {
 
 .footer-brand p { color: #9AABAE; font-size: 14px; margin: 16px 0 32px; }
 .footer-brand .footer-tagline { font-size: 12px; margin: -20px 0 24px; line-height: 1.6; }
+.footer-brand .footer-address {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .footer-brand .social-row { margin-top: 20px; }
 
 .footer-col h4 {
