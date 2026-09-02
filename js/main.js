@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Pricing page - NGN / USD currency toggle
+  // Pricing page - multi-currency toggle (NGN / USD / GHS / XOF / EUR)
   var currencyToggle = document.querySelector('.currency-toggle');
   if (currencyToggle) {
     var currencyButtons = Array.prototype.slice.call(currencyToggle.querySelectorAll('.currency-btn'));
-    var amounts = Array.prototype.slice.call(document.querySelectorAll('.price .amount'));
+    var amounts = Array.prototype.slice.call(document.querySelectorAll('.amount'));
 
     currencyButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
           b.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
         amounts.forEach(function (el) {
-          var value = currency === 'USD' ? el.dataset.usd : el.dataset.ngn;
+          var value = el.dataset[currency.toLowerCase()];
           if (value) el.textContent = value;
         });
       });
