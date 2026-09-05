@@ -605,6 +605,15 @@
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
+.phone-field { display: flex; gap: 8px; }
+.phone-country-select { flex: 0 0 132px; min-width: 0; padding-left: 12px; padding-right: 34px; font-size: 14px; }
+.phone-field input { flex: 1; min-width: 0; }
+
+@media (max-width: 480px) {
+  .phone-field { flex-wrap: wrap; }
+  .phone-country-select { flex: 1 1 100%; }
+}
+
 .form-check {
   display: flex;
   align-items: flex-start;
