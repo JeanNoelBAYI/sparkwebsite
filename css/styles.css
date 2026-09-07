@@ -205,6 +205,26 @@ h1, h2, h3 {
 
 .nav-cta { display: flex; align-items: center; gap: 16px; }
 
+.lang-switch { display: flex; align-items: center; }
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-raised, #F6FDFA);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 8px 30px 8px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%235B6B72' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.lang-select:hover { border-color: var(--accent-2); }
+.lang-select:focus { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+
 .nav-toggle {
   display: none;
   background: none;
