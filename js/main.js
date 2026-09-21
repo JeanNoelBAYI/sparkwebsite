@@ -101,6 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       highlight.querySelector('h3').textContent = btn.dataset.title;
       highlight.querySelector('p').textContent = btn.dataset.desc;
+      var photo = highlight.querySelector('.service-highlight-photo img');
+      if (photo && btn.dataset.image) {
+        photo.src = btn.dataset.image;
+        photo.alt = btn.dataset.title;
+      }
       var list = highlight.querySelector('ul');
       list.innerHTML = '';
       btn.dataset.points.split('|').forEach(function (point) {
