@@ -261,7 +261,7 @@
   margin-top: -56px;
   position: relative;
   z-index: 2;
-  padding-bottom: 56px;
+  padding-bottom: 24px;
 }
 
 .trekk-card {
@@ -309,6 +309,17 @@
 .trekk-card-stat { display: flex; align-items: center; justify-content: center; }
 .trekk-card-stat img { border-radius: 0; }
 
+.trekk-hero-cards-row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 56px;
+}
+.trekk-card-device { display: flex; align-items: center; justify-content: center; padding: 28px; }
+.trekk-card-device img { border-radius: 0; max-width: 100%; }
+
 @media (max-width: 900px) {
   .trekk-hero-top {
     background:
@@ -321,7 +332,8 @@
 }
 @media (max-width: 560px) {
   .trekk-hero-top { padding: 100px var(--gutter) 64px; }
-  .trekk-hero-cards { grid-template-columns: 1fr; margin-top: 24px; padding-bottom: 40px; }
+  .trekk-hero-cards { grid-template-columns: 1fr; margin-top: 24px; padding-bottom: 16px; }
+  .trekk-hero-cards-row2 { grid-template-columns: 1fr; padding-bottom: 40px; }
 }
 
 .home-stats {
