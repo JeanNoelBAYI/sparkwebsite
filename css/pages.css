@@ -252,16 +252,20 @@
 }
 
 .trekk-hero-phones {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 16px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: clamp(380px, 54vw, 900px);
+  z-index: 0;
+  pointer-events: none;
 }
 .trekk-hero-phones .hero-vehicles-img {
-  width: 80%;
-  max-width: 1040px;
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
 .trekk-hero-cards {
@@ -319,8 +323,18 @@
 .trekk-card-stat { display: flex; align-items: center; justify-content: center; }
 .trekk-card-stat img { border-radius: 0; }
 
+@media (max-width: 1280px) {
+  .trekk-hero-phones {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .trekk-hero-phones .hero-vehicles-img { width: 92%; max-width: 560px; }
+}
 @media (max-width: 900px) {
-  .trekk-hero-phones .hero-vehicles-img { width: 92%; }
   .trekk-hero-cards { grid-template-columns: 1fr 1fr; margin-top: 32px; }
   .trekk-card-dashboard { grid-column: 1 / -1; }
 }
