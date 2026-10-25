@@ -200,7 +200,10 @@
 .trekk-hero { overflow: visible; }
 
 .trekk-hero-top {
-  background: linear-gradient(150deg, #081A11 0%, #0E2C1C 55%, #123723 100%);
+  background:
+    linear-gradient(90deg, rgba(6, 20, 13, 0.94) 0%, rgba(6, 20, 13, 0.82) 32%, rgba(6, 20, 13, 0.4) 62%, rgba(6, 20, 13, 0.12) 100%),
+    url("../assets/hero/vehicles-fleet.png") center / cover no-repeat,
+    linear-gradient(150deg, #081A11 0%, #0E2C1C 55%, #123723 100%);
   padding: 120px var(--gutter) 96px;
   position: relative;
   overflow: hidden;
@@ -249,23 +252,6 @@
   color: rgba(255, 255, 255, 0.72);
   max-width: 480px;
   margin: 28px 0 0;
-}
-
-.trekk-hero-phones {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: clamp(420px, calc(55vw - 160px), 1100px);
-  z-index: 0;
-  pointer-events: none;
-}
-.trekk-hero-phones .hero-vehicles-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
 .trekk-hero-cards {
@@ -323,18 +309,13 @@
 .trekk-card-stat { display: flex; align-items: center; justify-content: center; }
 .trekk-card-stat img { border-radius: 0; }
 
-@media (max-width: 1280px) {
-  .trekk-hero-phones {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  .trekk-hero-phones .hero-vehicles-img { width: 92%; max-width: 560px; }
-}
 @media (max-width: 900px) {
+  .trekk-hero-top {
+    background:
+      linear-gradient(180deg, rgba(6, 20, 13, 0.93) 0%, rgba(6, 20, 13, 0.88) 55%, rgba(6, 20, 13, 0.78) 100%),
+      url("../assets/hero/vehicles-fleet.png") center / cover no-repeat,
+      linear-gradient(150deg, #081A11 0%, #0E2C1C 55%, #123723 100%);
+  }
   .trekk-hero-cards { grid-template-columns: 1fr 1fr; margin-top: 32px; }
   .trekk-card-dashboard { grid-column: 1 / -1; }
 }
