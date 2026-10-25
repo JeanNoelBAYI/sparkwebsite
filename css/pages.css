@@ -223,7 +223,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: center;
 }
@@ -255,10 +255,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 16px;
 }
 .trekk-hero-phones .hero-vehicles-img {
-  width: 100%;
-  max-width: 560px;
+  width: 80%;
+  max-width: 1040px;
   border-radius: 20px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
@@ -319,8 +320,7 @@
 .trekk-card-stat img { border-radius: 0; }
 
 @media (max-width: 900px) {
-  .trekk-hero-grid { grid-template-columns: 1fr; }
-  .trekk-hero-phones { margin-top: 40px; }
+  .trekk-hero-phones .hero-vehicles-img { width: 92%; }
   .trekk-hero-cards { grid-template-columns: 1fr 1fr; margin-top: 32px; }
   .trekk-card-dashboard { grid-column: 1 / -1; }
 }
