@@ -253,22 +253,14 @@
 
 .trekk-hero-phones {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: clamp(12px, 2vw, 20px);
 }
-.trekk-hero-phones .phone-sm {
-  width: clamp(88px, 13vw, 150px);
+.trekk-hero-phones .hero-vehicles-img {
+  width: 100%;
+  max-width: 560px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-  border: 3px solid rgba(255, 255, 255, 0.15);
-}
-.trekk-hero-phones .phone-lg {
-  width: clamp(150px, 21vw, 260px);
-  border-radius: 34px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  border: 6px solid #0B1710;
-  margin-top: -14px;
 }
 
 .trekk-hero-cards {
