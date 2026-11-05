@@ -1103,6 +1103,19 @@
   text-transform: uppercase;
   color: #7FEBAA;
   margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.launch-banner-date {
+  display: inline-block;
+  color: #FFFFFF;
+  font-weight: 700;
+  background: rgba(52, 214, 122, 0.18);
+  border: 1px solid rgba(127, 235, 170, 0.4);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 .launch-banner-copy h2 {
   font-family: var(--font-display);
@@ -1179,6 +1192,8 @@
 .launch-event-meta span + span { border-left: 1px solid rgba(255, 255, 255, 0.15); padding-left: 24px; }
 .launch-event-meta span { display: block; color: rgba(255, 255, 255, 0.55); font-size: 10px; }
 .launch-event-meta b { display: block; color: #E8EEE6; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+.launch-event-meta-date b { color: #7FEBAA; font-size: 15px; letter-spacing: 0.01em; }
+.launch-event-meta-date { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
 
 .launch-hero-art { position: relative; margin: -30px -20px 0; }
 .launch-globe { width: 112%; max-width: 620px; height: auto; display: block; margin: 0 auto; }
@@ -1349,6 +1364,13 @@
 .launch-event-details span { display: block; color: #7FEBAA; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
 .launch-event-details strong { display: block; color: #FFFFFF; font-size: 18px; margin-bottom: 2px; }
 .launch-event-details small { color: rgba(255, 255, 255, 0.55); font-size: 13px; }
+.launch-event-details-highlight strong {
+  color: #7FEBAA;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.launch-event-details-highlight small { color: rgba(255, 255, 255, 0.75); font-size: 14px; }
 
 .launch-form-card {
   background: var(--surface);
@@ -1392,6 +1414,7 @@
   .launch-event-meta { margin-top: 24px; }
   .launch-event-meta span { font-size: 8px; }
   .launch-event-meta b { font-size: 7px; }
+  .launch-event-meta-date b { font-size: 11px; }
   .launch-text-link { font-size: 10px; }
   .launch-eyebrow-dark { letter-spacing: 0.1em; font-size: 9px; }
 
@@ -1425,6 +1448,8 @@
   .launch-event-details { grid-template-columns: 1fr 1fr; display: grid; gap: 20px; }
   .launch-event-details strong { font-size: 14px; }
   .launch-event-details small { font-size: 10px; }
+  .launch-event-details-highlight strong { font-size: 20px; }
+  .launch-event-details-highlight small { font-size: 11px; }
   .launch-form-card { padding: 25px 21px; margin-top: 0; }
   .launch-form-card h3 { font-size: 25px; }
 
