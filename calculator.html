@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROI Calculator | Trekk Mobility</title>
+<meta name="description" content="Estimate the payback period and return on investment of a Trekk Mobility-powered scooter fleet, in your own currency.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-palette="#12D18E,#E08A1E">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="Trekk Mobility" class="logo-img"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"><span data-i18n="common.nav.home">Home</span></a></li>
+        <li><a href="services.html"><span data-i18n="common.nav.platform">Platform</span></a></li>
+        <li><a href="solutions.html"><span data-i18n="common.nav.solutions">Solutions</span></a></li>
+        <li><a href="pricing.html"><span data-i18n="common.nav.pricing">Pricing</span></a></li>
+        <li><a href="academy.html"><span data-i18n="common.nav.academy">Trekk Academy</span></a></li>
+        <li><a href="contact.html"><span data-i18n="common.nav.contact">Contact</span></a></li>
+        <li><a href="calculator.html" aria-current="page">ROI Calculator</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html#demo-form" class="btn btn-primary"><span data-i18n="common.nav.bookDemo">Book a Demo</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg></button>
+      </div>
+    </nav>
+  </header>
+
+<main>
+
+  <section class="section" style="padding-top:72px; padding-bottom:16px; text-align:center;">
+    <div class="container">
+      <p class="eyebrow" style="justify-content:center; display:flex;">ROI Calculator</p>
+      <h1 class="display-xl">See Your Potential Return</h1>
+      <p class="section-lede" style="max-width:640px; margin:16px auto 0;">Estimate the payback period and return on investment of a Trekk Mobility-powered scooter fleet &mdash; adjust any assumption to match your market.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:16px;">
+    <div class="container">
+      <div class="currency-toggle" role="group" aria-label="Choose currency" id="calcCurrencyToggle">
+        <button type="button" class="currency-btn is-active" data-currency="NGN" aria-pressed="true">&#8358; NGN</button>
+        <button type="button" class="currency-btn" data-currency="USD" aria-pressed="false">$ USD</button>
+        <button type="button" class="currency-btn" data-currency="GHS" aria-pressed="false">GH&#8373; GHS</button>
+        <button type="button" class="currency-btn" data-currency="XOF" aria-pressed="false">FCFA XOF</button>
+        <button type="button" class="currency-btn" data-currency="EUR" aria-pressed="false">&#8364; EUR</button>
+      </div>
+      <p class="currency-note" style="text-align:center;">Figures convert using the same indicative rates as our <a href="pricing.html">Pricing</a> page.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:8px;">
+    <div class="container">
+      <div class="calc-grid">
+
+        <form class="calc-inputs" id="calcForm">
+          <h2>Your Assumptions</h2>
+
+          <div class="calc-field">
+            <label for="calcScooters">Number of scooters</label>
+            <input type="number" id="calcScooters" min="1" max="20000" step="1" value="50">
+          </div>
+
+          <div class="calc-field">
+            <label for="calcCost">Cost per scooter <span class="calc-field-unit" id="calcCostUnit"></span></label>
+            <input type="number" id="calcCost" min="0" step="1">
+          </div>
+
+          <div class="calc-field">
+            <label for="calcRides">Average rides per scooter / day</label>
+            <input type="number" id="calcRides" min="0" max="50" step="0.1" value="5">
+          </div>
+
+          <div class="calc-field">
+            <label for="calcFare">Average revenue per ride <span class="calc-field-unit" id="calcFareUnit"></span></label>
+            <input type="number" id="calcFare" min="0" step="0.01">
+            <p class="calc-field-flag">Weakest assumption &mdash; no public per-ride e-scooter fare data exists for Nigeria yet. This default is loosely anchored to Bolt&rsquo;s Lagos ride-hailing minimum fare. Replace with your own target fare if you have one.</p>
+          </div>
+
+          <div class="calc-field">
+            <label for="calcOpex">Monthly operating cost / scooter <span class="calc-field-unit" id="calcOpexUnit"></span></label>
+            <input type="number" id="calcOpex" min="0" step="1">
+            <p class="calc-field-hint">Maintenance, charging/battery swaps and repositioning. Excludes Trekk&rsquo;s platform fee, calculated separately below.</p>
+          </div>
+
+          <div class="calc-field">
+            <label for="calcLifespan">Useful lifespan per scooter (months)</label>
+            <input type="number" id="calcLifespan" min="6" max="96" step="1" value="24">
+            <p class="calc-field-hint">When a fleet reaches this age within your horizon, replacement cost is added back into the model.</p>
+          </div>
+
+          <div class="calc-field">
+            <label for="calcHorizon">Investment horizon &mdash; <span id="calcHorizonValue">24</span> months</label>
+            <input type="range" id="calcHorizon" min="6" max="60" step="1" value="24">
+          </div>
+
+          <button type="button" class="btn btn-ghost btn-sm" id="calcReset" style="align-self:flex-start;">Reset to defaults</button>
+        </form>
+
+        <div class="calc-results">
+          <div class="calc-headline-stats">
+            <div class="calc-headline-stat">
+              <span class="calc-headline-label">Payback Period</span>
+              <span class="calc-headline-value" id="calcPayback">&mdash;</span>
+            </div>
+            <div class="calc-headline-stat">
+              <span class="calc-headline-label">ROI at Horizon</span>
+              <span class="calc-headline-value" id="calcRoi">&mdash;</span>
+            </div>
+          </div>
+
+          <div class="calc-stat-cards">
+            <div class="calc-stat-card">
+              <span class="calc-stat-label">Initial Investment</span>
+              <span class="calc-stat-value" id="calcInvestment">&mdash;</span>
+            </div>
+            <div class="calc-stat-card">
+              <span class="calc-stat-label">Monthly Revenue</span>
+              <span class="calc-stat-value" id="calcRevenue">&mdash;</span>
+            </div>
+            <div class="calc-stat-card">
+              <span class="calc-stat-label">Monthly Trekk Platform Fee</span>
+              <span class="calc-stat-value" id="calcTrekkFee">&mdash;</span>
+            </div>
+            <div class="calc-stat-card">
+              <span class="calc-stat-label">Monthly Operating Cost</span>
+              <span class="calc-stat-value" id="calcOpexTotal">&mdash;</span>
+            </div>
+            <div class="calc-stat-card is-highlight">
+              <span class="calc-stat-label">Monthly Net Profit</span>
+              <span class="calc-stat-value" id="calcNetProfit">&mdash;</span>
+            </div>
+          </div>
+
+          <div class="calc-tier-note" id="calcTierNote">
+            <span class="calc-tier-badge" id="calcTierBadge">Basic</span>
+            <p id="calcTierText">One-time platform set-up fee and per-vehicle rate shown above, pulled directly from our <a href="pricing.html">Pricing</a> page.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="calc-chart-card">
+        <div class="calc-chart-header">
+          <h3>Cumulative Cash Flow</h3>
+          <div class="calc-chart-legend">
+            <span><i class="calc-swatch calc-swatch-negative"></i>Recovering investment</span>
+            <span><i class="calc-swatch calc-swatch-positive"></i>Net profit</span>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="calcTableToggle" aria-expanded="false">View as table</button>
+        </div>
+        <div class="calc-chart-wrap" id="calcChartWrap">
+          <svg id="calcChart" viewBox="0 0 800 320" preserveAspectRatio="none" role="img" aria-labelledby="calcChartTitle">
+            <title id="calcChartTitle">Cumulative cash flow over the investment horizon</title>
+          </svg>
+          <div class="calc-chart-tooltip" id="calcTooltip" hidden></div>
+        </div>
+        <div class="calc-chart-table-wrap" id="calcTableWrap" hidden>
+          <table class="calc-chart-table">
+            <thead><tr><th>Month</th><th>Net Cash Flow</th><th>Cumulative</th></tr></thead>
+            <tbody id="calcTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="calc-disclaimer">All figures are illustrative estimates based on editable assumptions, not a guarantee of returns. Actual results depend on your market, regulation, demand, vehicle choice and operational execution. Trekk Mobility&rsquo;s own fees (set-up fee and per-vehicle platform rate) are accurate as published on our <a href="pricing.html">Pricing</a> page; all other figures &mdash; hardware cost, fares, ridership and operating costs &mdash; are placeholders for you to replace with your own data.</p>
+
+      <div class="calc-cta-row">
+        <a href="contact.html#demo-form" class="btn btn-primary"><span>Talk to a Mobility Expert</span> <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="#0B1220" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
+        <a href="pricing.html" class="btn btn-ghost">See Full Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Trekk Mobility" class="logo-img"></a>
+        <p data-i18n="common.footer.tagline">Powering the next generation of African mobility.</p>
+        <p class="footer-tagline" data-i18n="common.footer.services">Vehicle Sharing &middot; Digital Rentals &middot; Fleet Management &middot; Ride-Hailing &middot; IoT &middot; Payments &middot; Analytics &middot; Corporate Mobility</p>
+        <p class="footer-address">Nigeria HQ &mdash; Plot 660, Oluwatoyin Eleoramo Street, Omole Phase 2, Ikeja, Lagos, Nigeria</p>
+        <p class="footer-address"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M6.6 10.8C7.9 13.4 10.1 15.5 12.7 16.9L14.7 14.9C15 14.6 15.4 14.5 15.8 14.6C17 15 18.3 15.2 19.6 15.2C20.2 15.2 20.7 15.7 20.7 16.3V19.8C20.7 20.4 20.2 20.9 19.6 20.9C10.5 20.9 3.1 13.5 3.1 4.4C3.1 3.8 3.6 3.3 4.2 3.3H7.7C8.3 3.3 8.8 3.8 8.8 4.4C8.8 5.7 9 7 9.4 8.2C9.5 8.6 9.4 9 9.1 9.3L6.6 10.8Z" stroke="#12D18E" stroke-width="1.3" stroke-linejoin="round"/>
+</svg> +234 814 196 7739</p>
+        <form class="footer-subscribe" action="https://formsubmit.co/directors@trekkmobility.com" method="POST">
+          <input type="hidden" name="_subject" value="New Newsletter Signup — Trekk Mobility">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input id="footer-email" type="email" name="email" placeholder="your email" data-i18n-placeholder="common.footer.emailPlaceholder" required>
+          <button type="submit" class="btn btn-primary btn-sm" data-i18n="common.footer.subscribe">Subscribe</button>
+        </form>
+        <div class="social-row">
+          <a href="https://www.facebook.com/trekkmobility/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M15 8.5H17V5.2C16.6 5.1 15.6 5 14.4 5C11.9 5 10.2 6.6 10.2 9.4V12H7.5V15.6H10.2V21H13.9V15.6H16.5L17 12H13.9V9.7C13.9 9 14.1 8.5 15 8.5Z" fill="currentColor"/>
+</svg></a>
+          <a href="https://www.instagram.com/trekkmobility/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
+</svg></a>
+          <a href="https://x.com/trekkmobility" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M4 4L20 20M20 4L4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+</svg></a>
+          <a href="https://ng.linkedin.com/company/trekkmobility" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="3" y="9" width="4" height="12" fill="currentColor"/>
+  <circle cx="5" cy="4.5" r="2.3" fill="currentColor"/>
+  <path d="M11 9H15V11.2C15.8 9.8 17.3 8.7 19.3 8.7C22.4 8.7 23.5 10.8 23.5 14V21H19.5V14.7C19.5 13.1 19 12 17.6 12C16.5 12 15.9 12.8 15.6 13.5C15.5 13.8 15.5 14.2 15.5 14.6V21H11.5C11.5 21 11.5 9.5 11 9Z" fill="currentColor"/>
+</svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-offices">
+          <div class="footer-col">
+            <h4 data-i18n="common.footer.companyHeading">Company</h4>
+            <a href="about.html"><span data-i18n="common.footer.aboutTrekk">About Trekk</span></a>
+            <a href="#"><span data-i18n="common.footer.careers">Careers</span></a>
+            <a href="partners.html"><span data-i18n="common.footer.partners">Partners</span></a>
+            <a href="contact.html"><span data-i18n="common.nav.contact">Contact</span></a>
+            <a href="launch.html"><strong>Official Launch</strong></a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="common.footer.solutionsHeading">Solutions</h4>
+            <a href="solutions.html"><span data-i18n="common.footer.scooterSharing">Scooter Sharing</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.ebikeSharing">E-Bike Sharing</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.mopedSharing">Moped Sharing</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.motorcycleSharing">Motorcycle Sharing</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.carSharing">Car Sharing</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.digitalRentals">Digital Rentals</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.corporateMobility">Corporate Mobility</span></a>
+            <a href="solutions.html"><span data-i18n="common.footer.campusMobility">Campus Mobility</span></a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="common.footer.platformHeading">Platform</h4>
+            <a href="services.html"><span data-i18n="common.footer.riderApp">Rider App</span></a>
+            <a href="services.html"><span data-i18n="common.footer.operatorDashboard">Operator Dashboard</span></a>
+            <a href="services.html"><span data-i18n="common.footer.fleetManagement">Fleet Management</span></a>
+            <a href="services.html"><span data-i18n="common.footer.payments">Payments</span></a>
+            <a href="services.html"><span data-i18n="common.footer.iotTelematics">IoT &amp; Telematics</span></a>
+            <a href="services.html"><span data-i18n="common.footer.analytics">Analytics</span></a>
+            <a href="services.html"><span data-i18n="common.footer.apiIntegrations">API &amp; Integrations</span></a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="common.footer.supportHeading">Support</h4>
+            <a href="contact.html"><span data-i18n="common.footer.support247">24/7 Customer Support</span></a>
+            <a href="#"><span data-i18n="common.footer.helpCentre">Help Centre</span></a>
+            <a href="#"><span data-i18n="common.footer.partnerSupport">Partner Support</span></a>
+            <a href="#"><span data-i18n="common.footer.technicalSupport">Technical Support</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-legal" data-i18n="common.footer.legal">&copy; 2026 Trekk Mobility. All rights reserved. &mdash; Mobility technology built for Africa.</p>
+  </footer>
+
+<script src="js/i18n/en.js"></script>
+<script src="js/i18n/fr.js"></script>
+<script src="js/i18n/es.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/calculator.js"></script>
+</body>
+</html>
