@@ -185,7 +185,6 @@ h1, h2, h3 {
 
 .logo svg { flex-shrink: 0; }
 .logo-img { height: 68px; width: auto; display: block; flex-shrink: 0; }
-.site-header .logo-img { background: #102A23; padding: 6px 10px; border-radius: 8px; }
 
 .nav-links {
   display: flex;
