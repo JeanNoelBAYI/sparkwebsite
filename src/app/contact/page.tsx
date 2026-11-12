@@ -86,13 +86,13 @@ export default function ContactPage() {
           <div className="lg:col-span-7 rounded-3xl border border-border bg-white p-8 sm:p-10 shadow-md dark:bg-[#0E1522] space-y-6" id="demo-form">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#12D18E]">
-                Platform Walkthrough
+                {t("services.eyebrow", "Platform")}
               </span>
               <h2 className="text-2xl font-bold font-display text-foreground mt-1">
-                Book a Demo
+                {t("contact.form.title", "Book a Demo")}
               </h2>
               <p className="text-xs text-muted-foreground mt-1">
-                Tell us about your proposed mobility operation and vehicle needs.
+                {t("contact.form.lede", "Tell us about your proposed mobility operation and vehicle needs.")}
               </p>
             </div>
 
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      First Name *
+                      {t("contact.form.firstName", "First Name")} *
                     </label>
                     <Input
                       name="firstName"
@@ -141,7 +141,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      Last Name *
+                      {t("contact.form.lastName", "Last Name")} *
                     </label>
                     <Input
                       name="lastName"
@@ -156,7 +156,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      Business Email *
+                      {t("contact.form.workEmail", "Business Email")} *
                     </label>
                     <Input
                       type="email"
@@ -169,7 +169,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      Phone Number *
+                      {t("contact.form.phone", "Phone Number")} *
                     </label>
                     <Input
                       type="tel"
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      Company / Organization *
+                      {t("contact.form.company", "Company / Organization")} *
                     </label>
                     <Input
                       name="company"
@@ -197,14 +197,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold mb-1 text-foreground">
-                      Target Fleet Size *
+                      {t("contact.form.fleetSize", "Target Fleet Size")} *
                     </label>
                     <Dropdown
                       options={[
-                        { value: "1-50", label: "1 – 50 vehicles (Pilot)" },
-                        { value: "51-200", label: "51 – 200 vehicles (Growth)" },
-                        { value: "201-500", label: "201 – 500 vehicles (Citywide)" },
-                        { value: "500+", label: "500+ vehicles (Enterprise)" },
+                        { value: "1-50", label: "1 – 50" },
+                        { value: "51-200", label: "51 – 200" },
+                        { value: "201-500", label: "201 – 500" },
+                        { value: "500+", label: "500+" },
                       ]}
                       value={formData.fleetSize}
                       onChange={(val) =>
@@ -217,16 +217,15 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1 text-foreground">
-                    Primary Vehicle Type *
+                    {t("contact.form.vehicleType", "Primary Vehicle Type")} *
                   </label>
                   <Dropdown
                     options={[
-                      { value: "Electric Scooters", label: "Electric Kick-Scooters" },
-                      { value: "Electric Bicycles", label: "E-Bikes" },
-                      { value: "Electric Mopeds", label: "Electric Mopeds & Sitting Scooters" },
-                      { value: "Commercial Motorcycles", label: "Commercial EV Motorcycles" },
-                      { value: "Cars & Vans", label: "Cars & Vans" },
-                      { value: "Multi-Modal Mix", label: "Multi-Modal Fleet Mix" },
+                      { value: "Electric Scooters", label: t("contact.form.vehicleScooters", "Scooters") },
+                      { value: "Electric Bicycles", label: t("contact.form.vehicleEbikes", "E-Bikes") },
+                      { value: "Electric Mopeds", label: t("contact.form.vehicleMopeds", "Mopeds") },
+                      { value: "Golf Carts & LSVs", label: t("contact.form.vehicleGolfCarts", "Golf Carts & LSVs") },
+                      { value: "Multi-Modal Mix", label: t("contact.form.vehicleMultiple", "Multiple / Other") },
                     ]}
                     value={formData.vehicleType}
                     onChange={(val) =>
@@ -238,13 +237,13 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1 text-foreground">
-                    How Can We Help You? *
+                    {t("contact.form.message", "How Can We Help You?")} *
                   </label>
                   <textarea
                     name="message"
                     rows={4}
                     required
-                    placeholder="Tell us about your city, timeline, and whether you currently have hardware."
+                    placeholder="..."
                     value={formData.message}
                     onChange={handleChange}
                     className="flex w-full rounded-xl border border-border bg-background p-3 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-[#12D18E]"
@@ -260,7 +259,7 @@ export default function ContactPage() {
                   withArrow
                   className="w-full text-base font-bold shadow-md"
                 >
-                  Request Live Platform Demo
+                  {t("contact.form.submit", "Book a Platform Demo")}
                 </CustomButton>
               </form>
             )}
@@ -281,7 +280,7 @@ export default function ContactPage() {
                 <div className="pt-4 first:pt-0 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="size-2 rounded-full bg-[#12D18E]" />
-                    <h4 className="font-display text-sm font-bold">Nigeria (Headquarters)</h4>
+                    <h4 className="font-display text-sm font-bold">{t("contact.office.nigeria", "Nigeria Office")}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground pl-4">
                     Plot 660, Oluwatoyin Eleoramo Street, Omole Phase 2, Ikeja, Lagos, Nigeria
@@ -295,7 +294,7 @@ export default function ContactPage() {
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="size-2 rounded-full bg-[#2E6BFF]" />
-                    <h4 className="font-display text-sm font-bold">USA Office</h4>
+                    <h4 className="font-display text-sm font-bold">{t("contact.office.usa", "USA Office")}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground pl-4">
                     925 Canterbury Rd, NE, Atlanta, GA 30324
@@ -309,7 +308,7 @@ export default function ContactPage() {
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="size-2 rounded-full bg-[#FFB020]" />
-                    <h4 className="font-display text-sm font-bold">France Office</h4>
+                    <h4 className="font-display text-sm font-bold">{t("contact.office.france", "France Office")}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground pl-4">
                     19 Rue des Oiseaux, 91130, Ris-Orangis, France
@@ -323,7 +322,7 @@ export default function ContactPage() {
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="size-2 rounded-full bg-[#12D18E]" />
-                    <h4 className="font-display text-sm font-bold">Luxembourg Office</h4>
+                    <h4 className="font-display text-sm font-bold">{t("contact.office.luxembourg", "Luxembourg Office")}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground pl-4">
                     2 Rue du Kiem, L-8435 Steinfort
@@ -337,7 +336,7 @@ export default function ContactPage() {
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="size-2 rounded-full bg-[#2E6BFF]" />
-                    <h4 className="font-display text-sm font-bold">Switzerland Office</h4>
+                    <h4 className="font-display text-sm font-bold">{t("contact.office.swiss", "Swiss Office")}</h4>
                   </div>
                   <p className="text-xs text-muted-foreground pl-4">
                     Tannwaldstrasse 64, 4600 Olten, Switzerland

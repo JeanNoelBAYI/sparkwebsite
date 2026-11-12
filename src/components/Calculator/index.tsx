@@ -13,6 +13,7 @@ import {
 } from "@src/utils/calculator";
 import type { CurrencyCode, CalculatorFormState } from "@src/types/calculator";
 import { formatCurrency, compactFormat, cn } from "@src/lib/utils";
+import { useTranslation } from "@src/hooks/useTranslation";
 import Button from "@src/components/ui/button";
 import CustomButton from "@src/components/CustomButton";
 import Dropdown from "@src/components/Dropdown";
@@ -40,6 +41,7 @@ import {
 const CURRENCIES: CurrencyCode[] = ["NGN", "USD", "GHS", "XOF", "EUR"];
 
 export default function Calculator() {
+  const { t } = useTranslation();
   const [currency, setCurrency] = useState<CurrencyCode>("NGN");
   const [budget, setBudget] = useState<number>(DEFAULT_BUDGETS.NGN);
   const [horizon, setHorizon] = useState<number>(24);
@@ -186,16 +188,18 @@ export default function Calculator() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#12D18E]">
               <span className="size-2 rounded-full bg-[#12D18E] inline-block animate-pulse" />
-              <span>A simpler way to explore mobility</span>
+              <span>{t("calc.eyebrow", "Fleet Economics & ROI")}</span>
             </div>
 
             <h1 className="text-4xl font-extrabold font-display sm:text-6xl text-white leading-tight">
-              Start with a budget.<br />
-              <span className="text-[#12D18E]">See the possibility.</span>
+              {t("calc.h1", "Fleet Launch & ROI Calculator")}
             </h1>
 
             <p className="text-base text-[#8A98A0] sm:text-lg max-w-xl leading-relaxed">
-              You don&apos;t need a procurement spreadsheet to take the first step. Tell us what you could invest. We&apos;ll fill in an editable starting plan.
+              {t(
+                "calc.lede",
+                "Model your fleet budget, unit economics, monthly platform fees, and projected payback period in minutes."
+              )}
             </p>
 
             {/* Breadcrumb Steps */}

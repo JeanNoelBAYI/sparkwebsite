@@ -96,7 +96,7 @@ export default function PricingPage() {
             {t(
               "pricing.currencyNote",
               "Prices shown outside Naira are indicative estimates. You’ll be billed in your local currency."
-            )}
+            ).replace(/<[^>]*>/g, "")}
           </p>
         </div>
       </section>
@@ -108,39 +108,39 @@ export default function PricingPage() {
           <div className="rounded-3xl border border-border bg-white p-8 shadow-sm dark:bg-[#0E1522] flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Self-Managed
+                {t("pricing.basic.tagline", "White-label, self-managed")}
               </span>
-              <h3 className="font-display text-2xl font-bold">Basic</h3>
+              <h3 className="font-display text-2xl font-bold">{t("pricing.matrix.colBasic", "Basic")}</h3>
               <div>
                 <p className="font-display text-4xl font-extrabold text-foreground">
                   {currentPrices.basic.price}
                 </p>
                 <span className="text-xs text-muted-foreground block mt-1">
-                  one-time platform set-up fee
+                  {t("pricing.basic.setupNote", "one-time platform set-up fee")}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-2 py-4 border-y border-border text-xs">
                 <div>
-                  <span className="text-muted-foreground block">Fleet Size</span>
-                  <span className="font-bold text-foreground">Up to 500</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.fleetSizeLabel", "Fleet size")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.basic.fleetSize", "Up to 500 vehicles")}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground block">Launch Time</span>
-                  <span className="font-bold text-foreground">4 weeks</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.launchLabel", "Launch time")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.basic.launch", "4 weeks")}</span>
                 </div>
               </div>
 
               <ul className="space-y-2.5 text-xs text-muted-foreground">
                 {[
-                  "Operator web dashboard",
-                  "White-label rider apps (iOS & Android)",
-                  "1 IoT hardware brand of your choice",
-                  "Cellular & BLE locking integrations",
-                  "Integrated African payment gateways",
-                  "Multi-language (EN / FR / ES)",
-                  "Zone geofencing & analytics",
-                  "Support up to 5h/month",
+                  t("pricing.basic.item1", "Operator dashboard"),
+                  t("pricing.basic.item2", "White-label rider apps (iOS & Android)"),
+                  t("pricing.basic.item3", "1 IoT hardware brand of your choice"),
+                  t("pricing.basic.item4", "Omni, Sentinel or code lock support"),
+                  t("pricing.basic.item5", "20+ integrated payment platforms"),
+                  t("pricing.basic.item6", "Multi-language & multi-currency"),
+                  t("pricing.basic.item7", "Zone management, heatmaps & analytics"),
+                  t("pricing.basic.item8", "Support up to 5h/month"),
                 ].map((feat, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <Check className="size-4 shrink-0 text-[#12D18E]" />
@@ -152,7 +152,7 @@ export default function PricingPage() {
 
             <Link href="/contact" className="w-full">
               <Button variant="outline" className="w-full font-bold">
-                Get Started
+                {t("pricing.basic.cta", "Get Started")}
               </Button>
             </Link>
           </div>
@@ -161,44 +161,43 @@ export default function PricingPage() {
           <div className="rounded-3xl border-2 border-[#12D18E] bg-[#F0FBF5]/40 p-8 shadow-xl dark:bg-[#0E1522] flex flex-col justify-between space-y-6 relative">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <Badge variant="green" className="bg-[#12D18E] text-[#0B1220] font-bold px-3 py-1 shadow">
-                Most Popular
+                {t("pricing.standard.badge", "Most Popular")}
               </Badge>
             </div>
 
             <div className="space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-[#12D18E]">
-                With Employee & Field Apps
+                {t("pricing.standard.tagline", "White-label, with employee apps")}
               </span>
-              <h3 className="font-display text-2xl font-bold">Standard</h3>
+              <h3 className="font-display text-2xl font-bold">{t("pricing.matrix.colStandard", "Standard")}</h3>
               <div>
                 <p className="font-display text-4xl font-extrabold text-[#102A23] dark:text-[#12D18E]">
                   {currentPrices.standard.price}
                 </p>
                 <span className="text-xs text-muted-foreground block mt-1">
-                  one-time platform set-up fee
+                  {t("pricing.basic.setupNote", "one-time platform set-up fee")}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-2 py-4 border-y border-[#12D18E]/30 text-xs">
                 <div>
-                  <span className="text-muted-foreground block">Fleet Size</span>
-                  <span className="font-bold text-foreground">Up to 1,500</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.fleetSizeLabel", "Fleet size")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.standard.fleetSize", "Up to 1,500 vehicles")}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground block">Launch Time</span>
-                  <span className="font-bold text-foreground">2 weeks</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.launchLabel", "Launch time")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.standard.launch", "8 weeks")}</span>
                 </div>
               </div>
 
               <ul className="space-y-2.5 text-xs text-muted-foreground">
                 {[
-                  "Everything in Basic",
-                  "Dedicated field operations mobile app",
-                  "Automated battery swap dispatch engine",
-                  "Damage ticketing & parts inventory",
-                  "Speed limit corridors & parking photo AI audits",
-                  "Custom promotional campaigns & promo codes",
-                  "Priority phone & WhatsApp support (20h/mo)",
+                  t("pricing.standard.item1", "Everything in Basic, plus:"),
+                  t("pricing.standard.item2", "Mobile apps for chargers/employees"),
+                  t("pricing.standard.item3", "Scooters, bikes, mopeds, cars & multi-vehicle"),
+                  t("pricing.standard.item4", "Up to 3 IoT brands + 1 custom integration"),
+                  t("pricing.standard.item5", "Docking/charging support (Duckt or Knot)"),
+                  t("pricing.standard.item6", "Support up to 10h/month"),
                 ].map((feat, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <Check className="size-4 shrink-0 text-[#12D18E]" />
@@ -210,7 +209,7 @@ export default function PricingPage() {
 
             <Link href="/contact" className="w-full">
               <Button className="w-full bg-[#12D18E] text-[#0B1220] hover:bg-[#0fb87c] font-bold shadow-md">
-                Launch with Standard
+                {t("pricing.standard.cta", "Talk to Sales")}
               </Button>
             </Link>
           </div>
@@ -219,38 +218,38 @@ export default function PricingPage() {
           <div className="rounded-3xl border border-border bg-white p-8 shadow-sm dark:bg-[#0E1522] flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-[#2E6BFF]">
-                Full Enterprise Concierge
+                {t("pricing.premium.tagline", "Fully custom, enterprise-grade")}
               </span>
-              <h3 className="font-display text-2xl font-bold">Premium</h3>
+              <h3 className="font-display text-2xl font-bold">{t("pricing.matrix.colPremium", "Premium")}</h3>
               <div>
                 <p className="font-display text-4xl font-extrabold text-foreground">
                   {currentPrices.premium.price}
                 </p>
                 <span className="text-xs text-muted-foreground block mt-1">
-                  one-time platform set-up fee
+                  {t("pricing.basic.setupNote", "one-time platform set-up fee")}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-2 py-4 border-y border-border text-xs">
                 <div>
-                  <span className="text-muted-foreground block">Fleet Size</span>
-                  <span className="font-bold text-foreground">Unlimited</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.fleetSizeLabel", "Fleet size")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.premium.fleetSize", "Up to 3,000 vehicles")}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground block">Launch Time</span>
-                  <span className="font-bold text-foreground">2 weeks</span>
+                  <span className="text-muted-foreground block">{t("pricing.basic.launchLabel", "Launch time")}</span>
+                  <span className="font-bold text-foreground">{t("pricing.premium.launch", "As agreed")}</span>
                 </div>
               </div>
 
               <ul className="space-y-2.5 text-xs text-muted-foreground">
                 {[
-                  "Everything in Standard",
-                  "Custom IoT firmware development",
-                  "Unlimited multi-city / multi-country fleets",
-                  "Dedicated 24/7 technical operations engineer",
-                  "Custom ERP & accounting webhooks",
-                  "On-site launch support & local training",
-                  "Unlimited support hours",
+                  t("pricing.premium.item1", "Everything in Standard, plus:"),
+                  t("pricing.premium.item2", "Any vehicle type, any IoT brand"),
+                  t("pricing.premium.item3", "Docking/charging support (Duckt and Knot)"),
+                  t("pricing.premium.item4", "Loyalty module & online invoicing included"),
+                  t("pricing.premium.item5", "Unlimited MDS/GBFS API requests"),
+                  t("pricing.premium.item6", "No “Powered by Trekk” badge"),
+                  t("pricing.premium.item7", "Dedicated support (up to 8h/month)"),
                 ].map((feat, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <Check className="size-4 shrink-0 text-[#2E6BFF]" />
@@ -262,7 +261,7 @@ export default function PricingPage() {
 
             <Link href="/contact" className="w-full">
               <Button variant="outline" className="w-full font-bold">
-                Talk to Enterprise
+                {t("pricing.premium.cta", "Request Enterprise Pricing")}
               </Button>
             </Link>
           </div>
@@ -270,14 +269,17 @@ export default function PricingPage() {
       </section>
 
       {/* Local Currency Promise */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <section id="local-currency" className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="rounded-3xl border border-border bg-white p-8 shadow-sm dark:bg-[#0E1522] space-y-4">
           <div className="flex items-center gap-2 text-foreground font-display font-bold text-base">
             <ShieldCheck className="size-5 text-[#12D18E]" />
-            <span>Our Local Currency Promise</span>
+            <span>{t("pricing.currency.h2", "Our Local Currency Promise")}</span>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            We understand the challenges of foreign exchange volatility in Africa. You are never forced to pay software subscriptions in volatile US Dollars if your riders pay in Naira, Cedis, or CFA Francs. Trekk bills in the local currency of the market where you operate.
+            {t(
+              "pricing.currency.p1",
+              "We understand the challenges of foreign exchange volatility in Africa. You are never forced to pay software subscriptions in volatile US Dollars if your riders pay in Naira, Cedis, or CFA Francs. Trekk bills in the local currency of the market where you operate."
+            )}
           </p>
         </div>
       </section>

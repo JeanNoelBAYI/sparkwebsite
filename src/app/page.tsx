@@ -238,16 +238,22 @@ export default function HomePage() {
               </div>
 
               <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-                Mobility that <br />
-                <span className="text-[#12D18E]">connects.</span>
+                {t("home.hero.titlePart1", "Mobility that")} <br />
+                <span className="text-[#12D18E]">{t("home.hero.titlePart2", "connects.")}</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-[#A0B0A8] font-medium leading-relaxed max-w-xl">
-                Trekk is the OS for lightweight vehicles, connecting African fleets to intelligence and mobility entrepreneurs to a profitable future.
+                {t(
+                  "home.hero.sub1",
+                  "Trekk is the OS for lightweight vehicles, connecting African fleets to intelligence and mobility entrepreneurs to a profitable future."
+                )}
               </p>
 
               <p className="text-sm sm:text-base text-[#7B8F84] leading-relaxed max-w-lg">
-                From IoT telematics and automated fleet operations to rider apps and African mobile money, manage and scale your mobility business on one fully integrated operating system.
+                {t(
+                  "home.hero.sub2",
+                  "From IoT telematics and automated fleet operations to rider apps and African mobile money, manage and scale your mobility business on one fully integrated operating system."
+                )}
               </p>
 
               {/* Action Buttons Row */}
@@ -271,7 +277,7 @@ export default function HomePage() {
                     rounded="full"
                     className="px-8 text-base font-semibold border-white/20 text-white hover:bg-white/10"
                   >
-                    <span>Explore Fleet ROI &rarr;</span>
+                    <span>{t("home.hero.exploreRoi", "Explore Fleet ROI")} &rarr;</span>
                   </CustomButton>
                 </Link>
               </div>
@@ -423,7 +429,7 @@ export default function HomePage() {
           {/* Trusted In / Partner Badges */}
           <div className="pt-16 sm:pt-20 text-center space-y-6">
             <span className="text-xs font-bold uppercase tracking-widest text-[#5B6B72]">
-              TRUSTED BY INNOVATIVE OPERATORS &amp; PARTNERS ACROSS AFRICA
+              {t("home.trustedBy", "TRUSTED BY INNOVATIVE OPERATORS & PARTNERS ACROSS AFRICA")}
             </span>
 
             <BrandMarquee />
@@ -436,13 +442,13 @@ export default function HomePage() {
         <div className="max-w-3xl mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2E6BFF]">
             <span className="size-2 rounded-full bg-[#12D18E] inline-block animate-pulse" />
-            <span>Operating Infrastructure</span>
+            <span>{t("home.infra.eyebrow", "Operating Infrastructure")}</span>
           </div>
           <h2 className="text-3xl font-bold font-display sm:text-4xl text-foreground">
-            Complete Fleet Operating System
+            {t("home.infra.h2", "Complete Fleet Operating System")}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            We provide everything you need to operate a safe, reliable, and profitable connected fleet.
+            {t("home.infra.lede", "We provide everything you need to operate a safe, reliable, and profitable connected fleet.")}
           </p>
         </div>
 
@@ -451,9 +457,9 @@ export default function HomePage() {
             <div className="flex size-12 items-center justify-center rounded-2xl bg-[#12D18E]/10 text-[#12D18E]">
               <Smartphone className="size-6" />
             </div>
-            <h3 className="text-xl font-bold font-display text-foreground">White-Label Rider App</h3>
+            <h3 className="text-xl font-bold font-display text-foreground">{t("home.infra.c1Title", "White-Label Rider App")}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Native iOS and Android rider app built for speed. Integrated wallet, QR unlocking, trip summaries, and in-app customer support.
+              {t("home.infra.c1Desc", "Native iOS and Android rider app built for speed. Integrated wallet, QR unlocking, trip summaries, and in-app customer support.")}
             </p>
           </div>
 
@@ -461,9 +467,9 @@ export default function HomePage() {
             <div className="flex size-12 items-center justify-center rounded-2xl bg-[#2E6BFF]/10 text-[#2E6BFF]">
               <Layers className="size-6" />
             </div>
-            <h3 className="text-xl font-bold font-display text-foreground">Operator Web Command</h3>
+            <h3 className="text-xl font-bold font-display text-foreground">{t("home.infra.c2Title", "Operator Web Command")}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Complete fleet awareness in real-time. Manage dynamic pricing, geofenced parking corrals, battery swaps, and staff dispatching.
+              {t("home.infra.c2Desc", "Complete fleet awareness in real-time. Manage dynamic pricing, geofenced parking corrals, battery swaps, and staff dispatching.")}
             </p>
           </div>
 
@@ -471,9 +477,9 @@ export default function HomePage() {
             <div className="flex size-12 items-center justify-center rounded-2xl bg-[#FFB020]/10 text-[#FFB020]">
               <Cpu className="size-6" />
             </div>
-            <h3 className="text-xl font-bold font-display text-foreground">Hardware-Agnostic IoT</h3>
+            <h3 className="text-xl font-bold font-display text-foreground">{t("home.infra.c3Title", "Hardware-Agnostic IoT")}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Seamless integration with Omni, Queclink, and Teltonika IoT modules. Cellular failovers, remote locks, and real-time battery diagnostics.
+              {t("home.infra.c3Desc", "Seamless integration with Omni, Queclink, and Teltonika IoT modules. Cellular failovers, remote locks, and real-time battery diagnostics.")}
             </p>
           </div>
         </div>
@@ -489,7 +495,7 @@ export default function HomePage() {
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/Nm9sMcHF17U"
-                  title="Easy Steps on How to Trekk"
+                  title={t("home.howto.h2", "Easy Steps on How to Trekk")}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
@@ -498,9 +504,9 @@ export default function HomePage() {
               <div className="flex items-center justify-between text-xs text-muted-foreground px-1">
                 <span className="flex items-center gap-1.5 font-medium">
                   <span className="size-2 rounded-full bg-[#12D18E]" />
-                  Official Trekk Rider Onboarding
+                  {t("home.howto.onboarding", "Official Trekk Rider Onboarding")}
                 </span>
-                <span className="text-[11px] opacity-75">HD Video Tutorial</span>
+                <span className="text-[11px] opacity-75">{t("home.howto.hd", "HD Video Tutorial")}</span>
               </div>
             </div>
 
@@ -509,26 +515,26 @@ export default function HomePage() {
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-[#12D18E]">
                   <span className="size-2 rounded-full bg-[#12D18E] inline-block animate-pulse" />
-                  <span>Rider Quickstart</span>
+                  <span>{t("home.howto.badge", "Rider Quickstart")}</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-foreground tracking-tight">
-                  Easy Steps on How to Trekk
+                  {t("home.howto.h2", "Easy Steps on How to Trekk")}
                 </h2>
                 <p className="text-sm text-muted-foreground">
-                  Here are some easy steps on how to ride Trekk 🛴
+                  {t("home.howto.sub", "Here are some easy steps on how to ride Trekk 🛴")}
                 </p>
               </div>
 
               {/* Ordered Steps */}
               <div className="space-y-3 pt-1">
                 {[
-                  "Locate the Trekk scooter nearby, using the Trekk App",
-                  "Unlock the scooter by scanning the QR code",
-                  "Wear a helmet for safety",
-                  "Step on the deck and kick forward",
-                  "Twist the throttle to accelerate",
-                  "Squeeze the hand break to stop",
-                  "Release the kickstand to park",
+                  t("home.howto.s1", "Locate the Trekk scooter nearby, using the Trekk App"),
+                  t("home.howto.s2", "Unlock the scooter by scanning the QR code"),
+                  t("home.howto.s3", "Wear a helmet for safety"),
+                  t("home.howto.s4", "Step on the deck and kick forward"),
+                  t("home.howto.s5", "Twist the throttle to accelerate"),
+                  t("home.howto.s6", "Squeeze the hand break to stop"),
+                  t("home.howto.s7", "Release the kickstand to park"),
                 ].map((step, idx) => (
                   <div key={idx} className="flex items-start gap-3 text-sm text-foreground/90">
                     <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#12D18E]/15 text-[#12D18E] font-bold text-xs mt-0.5">
@@ -545,8 +551,8 @@ export default function HomePage() {
                   !
                 </div>
                 <div>
-                  <p className="font-bold uppercase tracking-wider text-[11px]">Notice &middot; Campus Speed Limit</p>
-                  <p className="opacity-90">N.B. Speed limit is 20km/hr</p>
+                  <p className="font-bold uppercase tracking-wider text-[11px]">{t("home.howto.noticeTitle", "Notice · Campus Speed Limit")}</p>
+                  <p className="opacity-90">{t("home.howto.noticeBody", "N.B. Speed limit is 20km/hr")}</p>
                 </div>
               </div>
             </div>
@@ -565,10 +571,14 @@ export default function HomePage() {
             </div>
 
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1220] dark:text-white leading-[1.08]">
-              One<br />
-              platform.<br />
-              Every<br />
-              screen.
+              {t("home.showcase.h2", "One platform.<br>Every screen.")
+                .split(/<br\s*\/?>/i)
+                .map((part, i) => (
+                  <React.Fragment key={i}>
+                    {i > 0 && <br />}
+                    {part}
+                  </React.Fragment>
+                ))}
             </h2>
 
             <p className="text-base sm:text-lg text-[#5B6B72] dark:text-slate-300 leading-relaxed max-w-xl">
@@ -579,7 +589,7 @@ export default function HomePage() {
             </p>
 
             <div className="pt-2">
-              <Link href="/services">
+              <Link href="/platform/fleet-dashboard">
                 <CustomButton
                   variant="primary"
                   size="lg"
@@ -747,13 +757,13 @@ export default function HomePage() {
             <div className="space-y-2 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#12D18E]">
                 <Sparkles className="size-4" />
-                <span>The Official Launch &middot; November 24, 2026 &middot; 2:00 PM WAT</span>
+                <span>{t("home.launch.eyebrow", "The Official Launch · November 24, 2026 · 2:00 PM WAT")}</span>
               </div>
               <h2 className="text-2xl font-bold font-display sm:text-3xl text-white">
-                Trekk Mobility is going live. Be in the room.
+                {t("home.launch.h2", "Trekk Mobility is going live. Be in the room.")}
               </h2>
               <p className="text-sm text-[#8A98A0]">
-                Join our launch event and digital press conference &mdash; free, online, worldwide.
+                {t("home.launch.lede", "Join our launch event and digital press conference — free, online, worldwide.")}
               </p>
             </div>
             <CustomButton
@@ -763,7 +773,7 @@ export default function HomePage() {
               withArrow
               className="font-bold shadow-md"
             >
-              Reserve Your Place
+              {t("home.launch.cta", "Reserve Your Place")}
             </CustomButton>
           </div>
         </Link>

@@ -46,18 +46,18 @@ export default function AcademyPage() {
       </section>
 
       {/* Course Categories */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="blog" className="container mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="max-w-2xl mb-12 space-y-3">
-          <span className="eyebrow">Curriculum</span>
+          <span className="eyebrow">{t("academy.eyebrow", "Join Trekk Academy")}</span>
           <h2 className="text-3xl font-bold font-display sm:text-4xl text-foreground">
             {t("academy.courses.h2", "Our Course Categories")}
           </h2>
           <p className="text-sm text-muted-foreground">
-            Developed by engineers and operators who have deployed tens of thousands of rides in African urban transit corridors.
+            {t("academy.heroLede", "Developed by engineers and operators who have deployed tens of thousands of rides in African urban transit corridors.")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="resources" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-24">
           {[
             {
               icon: BookOpen,
@@ -73,29 +73,21 @@ export default function AcademyPage() {
               icon: BatteryCharging,
               color: "text-[#2E6BFF]",
               bg: "bg-[#2E6BFF]/10",
-              title: "Battery Management & Swap Logistics",
-              desc: "Deep dive into lithium battery safety, depot charging racks, state-of-health degradation, and route optimization for field swap crews.",
+              title: t("academy.course2Title", "Field Operations & Vehicle Maintenance"),
+              desc: t(
+                "academy.course2Desc",
+                "Hands-on training for rebalancing, battery swaps, and vehicle diagnostics to keep your fleet on the road and riders happy."
+              ),
             },
             {
               icon: Wrench,
               color: "text-[#FFB020]",
               bg: "bg-[#FFB020]/10",
-              title: "Hardware Repair & Preventive Maintenance",
-              desc: "Practical hands-on teardowns: brake adjustments, tire replacements, throttle wiring, motor diagnostic codes, and firmware flashes.",
-            },
-            {
-              icon: MapPin,
-              color: "text-[#12D18E]",
-              bg: "bg-[#12D18E]/10",
-              title: "Telematics & Geofence Mastery",
-              desc: "Learn to configure speed-throttle polygons, virtual parking hubs, photo verification validation, and automated recovery alerts.",
-            },
-            {
-              icon: DollarSign,
-              color: "text-[#2E6BFF]",
-              bg: "bg-[#2E6BFF]/10",
-              title: "Financial Modeling & Unit Economics",
-              desc: "Master fleet cash flow planning: Capex financing, per-ride revenue modeling, battery amortization, and tax incentives across African jurisdictions.",
+              title: t("academy.course3Title", "Fleet Analytics & Growth"),
+              desc: t(
+                "academy.course3Desc",
+                "Learn to read your dashboard like a pro: utilization, demand forecasting, and pricing optimization to grow revenue per vehicle."
+              ),
             },
           ].map((course, i) => {
             const Icon = course.icon;
