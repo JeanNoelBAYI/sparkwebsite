@@ -16,7 +16,7 @@ export function escapeHtml(str: string): string {
 }
 
 export function renderEmailShell(bodyRowsHtml: string): string {
-  const logoUrl = "https://trekkmobility.com/assets/logo.png";
+  const logoUrl = "https://trekkmobility.com/images/logo.png";
   return `<!doctype html>
 <html>
   <head>
