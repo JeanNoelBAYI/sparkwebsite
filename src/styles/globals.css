@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --font-display: "Space Grotesk", sans-serif;
+    --radius: 0.5rem;
+
+    /* Trekk Base Colors */
+    --background: 144 33% 98%;      /* #FAFDFB */
+    --foreground: 221 49% 8%;       /* #0B1220 */
+
+    --card: 0 0% 100%;              /* #FFFFFF */
+    --card-foreground: 221 49% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 49% 8%;
+
+    --primary: 159 84% 45%;         /* Trekk Green #12D18E */
+    --primary-foreground: 221 49% 8%;
+
+    --secondary: 222 100% 59%;      /* Trekk Blue #2E6BFF */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 150 14% 95%;           /* #F0FBF5 */
+    --muted-foreground: 199 11% 40%;/* #5B6B72 */
+
+    --accent: 159 84% 45%;          /* Trekk Green #12D18E */
+    --accent-foreground: 221 49% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 20% 91%;          /* #E3EDE8 */
+    --input: 150 20% 91%;
+    --ring: 159 84% 45%;
+
+    /* Brand Tokens */
+    --brand: 159 84% 45%;           /* #12D18E */
+    --brand-foreground: 221 49% 8%;
+    --brand-accent: 222 100% 59%;   /* #2E6BFF */
+    --brand-warm: 38 100% 56%;      /* #FFB020 */
+
+    --trekk-dark: #0B1220;
+    --trekk-green: #12D18E;
+    --trekk-blue: #2E6BFF;
+    --trekk-amber: #FFB020;
+    --trekk-bg: #FAFDFB;
+  }
+
+  .dark {
+    --background: 221 49% 8%;       /* #0B1220 */
+    --foreground: 144 33% 98%;      /* #FAFDFB */
+
+    --card: 220 40% 12%;
+    --card-foreground: 144 33% 98%;
+
+    --popover: 220 40% 12%;
+    --popover-foreground: 144 33% 98%;
+
+    --primary: 159 84% 45%;
+    --primary-foreground: 221 49% 8%;
+
+    --secondary: 222 100% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 30% 16%;
+    --muted-foreground: 199 15% 65%;
+
+    --accent: 159 84% 45%;
+    --accent-foreground: 221 49% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 159 84% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+}
+
+/* Custom Trekk Utility Classes */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  color: #2E6BFF;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #12D18E;
+  display: inline-block;
+}
+
+.trekk-card-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6FDFA 100%);
+}
+
+.trekk-glow-green {
+  box-shadow: 0 0 40px -10px rgba(18, 209, 142, 0.25);
+}
+
+.trekk-glow-blue {
+  box-shadow: 0 0 40px -10px rgba(46, 107, 255, 0.25);
+}
+
