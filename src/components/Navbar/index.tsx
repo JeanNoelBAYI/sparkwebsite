@@ -4,7 +4,17 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+  ArrowRight,
+  Home,
+  Layers,
+  Tag,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS } from "@src/constants/navigation";
 import { useTranslation } from "@src/hooks/useTranslation";
 import LanguageSwitcher from "@src/components/LanguageSwitcher";
@@ -12,7 +22,17 @@ import CustomButton from "@src/components/CustomButton";
 import { cn } from "@src/lib/utils";
 
 // Routes that have a dark hero section (#0B1813 or dark card)
-const DARK_HERO_ROUTES = ["/", "/solutions", "/launch", "/academy", "/scooteasy"];
+const DARK_HERO_ROUTES = [
+  "/",
+  "/solutions",
+  "/launch",
+  "/academy",
+  "/scooteasy",
+  "/safety",
+  "/community",
+  "/sustainability",
+  "/faq",
+];
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -92,7 +112,7 @@ export default function Navbar() {
             : "border-none bg-background dark:bg-[#0B1813] text-[#0B1220] dark:text-white"
         )}
       >
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto flex h-16 lg:h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div className="relative h-11 w-24 sm:w-28">
@@ -125,13 +145,23 @@ export default function Navbar() {
                   return pathname.startsWith("/industries");
                 }
                 if (link.labelKey === "common.nav.learn") {
-                  return pathname.startsWith("/academy") || pathname.startsWith("/calculator");
+                  return (
+                    pathname.startsWith("/academy") ||
+                    pathname.startsWith("/calculator") ||
+                    pathname.startsWith("/safety") ||
+                    pathname.startsWith("/faq")
+                  );
                 }
                 if (link.labelKey === "common.nav.pricing") {
                   return pathname.startsWith("/pricing");
                 }
                 if (link.labelKey === "common.nav.company") {
-                  return pathname.startsWith("/about") || pathname.startsWith("/contact");
+                  return (
+                    pathname.startsWith("/about") ||
+                    pathname.startsWith("/contact") ||
+                    pathname.startsWith("/community") ||
+                    pathname.startsWith("/sustainability")
+                  );
                 }
                 return pathname === link.href;
               })();
@@ -411,174 +441,230 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Actions: Language Switcher + Hamburger */}
+          {/* Mobile Actions: Language Switcher */}
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher isLight={isLight} />
-            <button
-              type="button"
-              onClick={() => setIsOpen(true)}
-              aria-expanded={isOpen}
-              aria-label="Open navigation menu"
-              className={cn(
-                "inline-flex items-center justify-center rounded-xl p-2 focus:outline-none transition-colors",
-                isLight
-                  ? "text-[#0B1220] hover:bg-black/10 dark:text-white dark:hover:bg-white/10"
-                  : "text-white hover:bg-white/10"
-              )}
-            >
-              <Menu className="size-6" />
-            </button>
           </div>
         </div>
       </header>
 
-      {/* Off-Canvas Mobile Drawer (< lg) */}
-      {isOpen && (
-        <div className="fixed inset-0 z-[60] lg:hidden">
-          {/* Dark Backdrop */}
-          <div
-            className="fixed inset-0 bg-black/65 backdrop-blur-sm animate-in fade-in duration-200"
-            onClick={() => setIsOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* Slide-Over Off-Canvas Panel */}
-          <aside
-            aria-label="Mobile Navigation"
-            className="fixed top-0 right-0 h-full w-[86%] max-w-sm bg-[#0B1510] text-white border-l border-white/10 shadow-2xl flex flex-col animate-in slide-in-from-right duration-300"
+      {/* Mobile App Bottom Tab Bar (< lg only) */}
+      <nav
+        aria-label="Mobile App Tabs"
+        className="fixed bottom-0 inset-x-0 z-50 lg:hidden border-t border-white/10 bg-[#0B1510]/95 backdrop-blur-xl text-white pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_30px_rgba(0,0,0,0.3)]"
+      >
+        <div className="grid grid-cols-4 h-16 items-center px-2">
+          <Link
+            href="/"
+            className={cn(
+              "flex flex-col items-center justify-center gap-1 py-1.5 rounded-xl transition-colors",
+              pathname === "/"
+                ? "text-[#12D18E]"
+                : "text-white/70 hover:text-white"
+            )}
           >
-            {/* Drawer Header */}
-            <div className="flex items-center justify-between px-6 h-20 border-b border-white/10 shrink-0">
-              <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="relative h-10 w-24"
-              >
-                <Image
-                  src="/images/logo-main.png"
-                  alt="Trekk Mobility"
-                  fill
-                  className="object-contain object-left brightness-0 invert"
-                />
-              </Link>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close navigation menu"
-                className="rounded-xl p-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
-              >
-                <X className="size-6" />
-              </button>
-            </div>
+            <Home className="size-5" />
+            <span className="text-[11px] font-semibold">Home</span>
+          </Link>
 
-            {/* Drawer Scrollable Menu */}
-            <nav className="flex-1 overflow-y-auto px-5 py-6 space-y-2">
-              {NAV_LINKS.map((link) => {
-                const hasSub = Boolean(link.subItems && link.subItems.length > 0);
-                const isExpanded = mobileExpanded === link.labelKey;
+          <Link
+            href="/solutions"
+            className={cn(
+              "flex flex-col items-center justify-center gap-1 py-1.5 rounded-xl transition-colors",
+              pathname.startsWith("/solutions")
+                ? "text-[#12D18E]"
+                : "text-white/70 hover:text-white"
+            )}
+          >
+            <Layers className="size-5" />
+            <span className="text-[11px] font-semibold">Trekk</span>
+          </Link>
 
-                if (!hasSub) {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.labelKey}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
-                        isActive
-                          ? "bg-[#12D18E]/15 text-[#12D18E] font-bold"
-                          : "text-white/90 hover:bg-white/5 hover:text-white"
-                      )}
-                    >
-                      <span>{t(link.labelKey, link.defaultLabel)}</span>
-                    </Link>
-                  );
-                }
+          <Link
+            href="/pricing"
+            className={cn(
+              "flex flex-col items-center justify-center gap-1 py-1.5 rounded-xl transition-colors",
+              pathname.startsWith("/pricing")
+                ? "text-[#12D18E]"
+                : "text-white/70 hover:text-white"
+            )}
+          >
+            <Tag className="size-5" />
+            <span className="text-[11px] font-semibold">Pricing</span>
+          </Link>
 
-                return (
-                  <div key={link.labelKey} className="space-y-1">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setMobileExpanded((prev) =>
-                          prev === link.labelKey ? null : link.labelKey
-                        )
-                      }
-                      aria-expanded={isExpanded}
-                      className={cn(
-                        "w-full flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
-                        isExpanded
-                          ? "bg-white/5 text-[#12D18E] font-bold"
-                          : "text-white/90 hover:bg-white/5 hover:text-white"
-                      )}
-                    >
-                      <span>{t(link.labelKey, link.defaultLabel)}</span>
-                      <ChevronDown
-                        className={cn(
-                          "size-4 transition-transform duration-200",
-                          isExpanded && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {isExpanded && link.subItems && (
-                      <div className="ml-4 pl-3 border-l border-white/15 space-y-1 py-1">
-                        {link.subItems.map((sub) => {
-                          const isSubActive = pathname === sub.href;
-                          return (
-                            <Link
-                              key={sub.href + sub.labelKey}
-                              href={sub.href}
-                              onClick={() => setIsOpen(false)}
-                              className={cn(
-                                "flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
-                                isSubActive
-                                  ? "bg-[#12D18E] text-[#0B1220] font-semibold"
-                                  : "text-white/75 hover:bg-white/10 hover:text-white"
-                              )}
-                            >
-                              <span>{t(sub.labelKey, sub.defaultLabel)}</span>
-                              {sub.hasRightArrow && (
-                                <ChevronRight className="size-3.5 opacity-70" />
-                              )}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
-
-            {/* Drawer Footer CTA */}
-            <div className="p-5 border-t border-white/10 space-y-3 bg-[#08100C] shrink-0">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-white/60 uppercase tracking-wider font-semibold">
-                  Language
-                </span>
-                <LanguageSwitcher />
-              </div>
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block"
-              >
-                <CustomButton
-                  variant="primary"
-                  size="lg"
-                  rounded="xl"
-                  withArrow
-                  className="w-full justify-center font-bold"
-                >
-                  {t("common.nav.bookDemo", "Book a Demo")}
-                </CustomButton>
-              </Link>
-            </div>
-          </aside>
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open full navigation menu"
+            className={cn(
+              "flex flex-col items-center justify-center gap-1 py-1.5 rounded-xl transition-colors",
+              isOpen ? "text-[#12D18E]" : "text-white/70 hover:text-white"
+            )}
+          >
+            <Menu className="size-5" />
+            <span className="text-[11px] font-semibold">Menu</span>
+          </button>
         </div>
-      )}
+      </nav>
+
+      {/* Off-Canvas Mobile Drawer (< lg) with smooth scrolling & Framer Motion */}
+      <AnimatePresence>
+        {isOpen && (
+          <div className="fixed inset-0 z-[70] lg:hidden">
+            {/* Dark Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/65 backdrop-blur-sm"
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+            />
+
+            {/* Slide-Over Off-Canvas Panel */}
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 28, stiffness: 300 }}
+              aria-label="Mobile Navigation"
+              className="fixed inset-y-0 right-0 h-[100dvh] w-[86%] max-w-sm bg-[#0B1510] text-white border-l border-white/10 shadow-2xl flex flex-col"
+            >
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between px-6 h-16 border-b border-white/10 shrink-0">
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className="relative h-9 w-24"
+                >
+                  <Image
+                    src="/images/logo-main.png"
+                    alt="Trekk Mobility"
+                    fill
+                    className="object-contain object-left brightness-0 invert"
+                  />
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Close navigation menu"
+                  className="rounded-xl p-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  <X className="size-6" />
+                </button>
+              </div>
+
+              {/* Drawer Scrollable Menu */}
+              <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain touch-pan-y px-5 py-5 space-y-2">
+                {NAV_LINKS.map((link) => {
+                  const hasSub = Boolean(link.subItems && link.subItems.length > 0);
+                  const isExpanded = mobileExpanded === link.labelKey;
+
+                  if (!hasSub) {
+                    const isActive = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.labelKey}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className={cn(
+                          "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
+                          isActive
+                            ? "bg-[#12D18E]/15 text-[#12D18E] font-bold"
+                            : "text-white/90 hover:bg-white/5 hover:text-white"
+                        )}
+                      >
+                        <span>{t(link.labelKey, link.defaultLabel)}</span>
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div key={link.labelKey} className="space-y-1">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setMobileExpanded((prev) =>
+                            prev === link.labelKey ? null : link.labelKey
+                          )
+                        }
+                        aria-expanded={isExpanded}
+                        className={cn(
+                          "w-full flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
+                          isExpanded
+                            ? "bg-white/5 text-[#12D18E] font-bold"
+                            : "text-white/90 hover:bg-white/5 hover:text-white"
+                        )}
+                      >
+                        <span>{t(link.labelKey, link.defaultLabel)}</span>
+                        <ChevronDown
+                          className={cn(
+                            "size-4 transition-transform duration-200",
+                            isExpanded && "rotate-180"
+                          )}
+                        />
+                      </button>
+
+                      {isExpanded && link.subItems && (
+                        <div className="ml-4 pl-3 border-l border-white/15 space-y-1 py-1">
+                          {link.subItems.map((sub) => {
+                            const isSubActive = pathname === sub.href;
+                            return (
+                              <Link
+                                key={sub.href + sub.labelKey}
+                                href={sub.href}
+                                onClick={() => setIsOpen(false)}
+                                className={cn(
+                                  "flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
+                                  isSubActive
+                                    ? "bg-[#12D18E] text-[#0B1220] font-semibold"
+                                    : "text-white/75 hover:bg-white/10 hover:text-white"
+                                )}
+                              >
+                                <span>{t(sub.labelKey, sub.defaultLabel)}</span>
+                                {sub.hasRightArrow && (
+                                  <ChevronRight className="size-3.5 opacity-70" />
+                                )}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </nav>
+
+              {/* Drawer Footer CTA */}
+              <div className="p-5 border-t border-white/10 space-y-3 bg-[#08100C] shrink-0 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-white/60 uppercase tracking-wider font-semibold">
+                    Language
+                  </span>
+                  <LanguageSwitcher />
+                </div>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block"
+                >
+                  <CustomButton
+                    variant="primary"
+                    size="lg"
+                    rounded="xl"
+                    withArrow
+                    className="w-full justify-center font-bold"
+                  >
+                    {t("common.nav.bookDemo", "Book a Demo")}
+                  </CustomButton>
+                </Link>
+              </div>
+            </motion.aside>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

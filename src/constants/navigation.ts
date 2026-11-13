@@ -189,6 +189,15 @@ export const NAV_LINKS: NavLinkItem[] = [
           "Essential scooter riding guidelines, helmet use, scooter lanes, and pedestrian safety.",
         megaMenuSection: "core",
       },
+      {
+        href: "/faq",
+        labelKey: "common.nav.learnSub.faq",
+        defaultLabel: "FAQ",
+        descriptionKey: "common.nav.learnMega.faq.desc",
+        defaultDescription:
+          "Answers to common questions about launching, hardware, pricing, and scaling with Trekk.",
+        megaMenuSection: "core",
+      },
     ],
   },
   {
@@ -363,6 +372,11 @@ export const FOOTER_SECTIONS: FooterSection[] = [
         href: "/safety",
         labelKey: "common.nav.learnSub.safety",
         defaultLabel: "Safety",
+      },
+      {
+        href: "/faq",
+        labelKey: "common.nav.learnSub.faq",
+        defaultLabel: "FAQ",
       },
     ],
   },

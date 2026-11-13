@@ -5,11 +5,10 @@ import AcademyCta from "./Cta";
 
 export default function AcademySections() {
   return (
-    <div className="space-y-20 py-16">
+    <div className="space-y-16 pb-20">
       <AcademyBanner />
       <AcademyCourses />
       <AcademyCta />
     </div>
   );
 }
-

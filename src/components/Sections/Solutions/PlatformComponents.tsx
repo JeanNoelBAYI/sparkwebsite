@@ -114,7 +114,7 @@ const SERVICE_TABS: ServiceTab[] = [
       "GBFS (General Bikeshare Feed Specification) compliant public feeds",
       "Role-based API tokens with granular rate-limiting controls",
     ],
-    image: "/images/trekk-home.png",
+    image: "/images/api-integrations.jpg",
   },
 ];
 
