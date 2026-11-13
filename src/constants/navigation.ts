@@ -117,7 +117,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.vehicleSharing.desc",
         defaultDescription:
           "All the technology you need to launch your own scooter, bike, moped and car sharing fleet.",
-        image: "/images/mob-1.png",
+        image: "/images/product-1.png",
         bgImage: "/images/bg-1.png",
         hasRightArrow: true,
       },
@@ -128,7 +128,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.digitalRental.desc",
         defaultDescription:
           "Automate your rental business — from ID verification and digital onboarding to keyless access.",
-        image: "/images/mob-2.png",
+        image: "/images/com-5.png",
         bgImage: "/images/bg-2.png",
         hasRightArrow: true,
       },
@@ -139,7 +139,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.rideHailing.desc",
         defaultDescription:
           "Ready-to-go tech solution for ride-hailing and taxi businesses. Cars, vans, tricycles and more.",
-        image: "/images/mob-3.png",
+        image: "/images/product-3.png",
         bgImage: "/images/bg-3.png",
         hasRightArrow: true,
       },
@@ -180,6 +180,15 @@ export const NAV_LINKS: NavLinkItem[] = [
           "Model your fleet budget, unit economics, monthly platform fees, and payback period.",
         megaMenuSection: "core",
       },
+      {
+        href: "/safety",
+        labelKey: "common.nav.learnSub.safety",
+        defaultLabel: "Safety",
+        descriptionKey: "common.nav.learnMega.safety.desc",
+        defaultDescription:
+          "Essential scooter riding guidelines, helmet use, scooter lanes, and pedestrian safety.",
+        megaMenuSection: "core",
+      },
     ],
   },
   {
@@ -202,6 +211,24 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.companyMega.aboutUs.desc",
         defaultDescription:
           "Our mission to power sustainable, connected urban mobility across emerging markets.",
+        megaMenuSection: "core",
+      },
+      {
+        href: "/community",
+        labelKey: "common.nav.companySub.community",
+        defaultLabel: "Community",
+        descriptionKey: "common.nav.companyMega.community.desc",
+        defaultDescription:
+          "Discover our growing network of university campuses, rider stories, and sustainable mobility communities.",
+        megaMenuSection: "core",
+      },
+      {
+        href: "/sustainability",
+        labelKey: "common.nav.companySub.sustainability",
+        defaultLabel: "Sustainability",
+        descriptionKey: "common.nav.companyMega.sustainability.desc",
+        defaultDescription:
+          "Our commitment to zero-emission urban mobility, green technology, battery recycling, and environmental conservation.",
         megaMenuSection: "core",
       },
       {
@@ -237,45 +264,147 @@ export const NAV_LINKS: NavLinkItem[] = [
 
 export const FOOTER_SECTIONS: FooterSection[] = [
   {
-    titleKey: "common.footer.companyHeading",
-    defaultTitle: "Company",
-    links: [
-      { href: "/about", labelKey: "common.footer.aboutTrekk", defaultLabel: "About Trekk" },
-      { href: "/partners", labelKey: "common.footer.partners", defaultLabel: "Partners" },
-      { href: "/launch", labelKey: "common.footer.launch", defaultLabel: "Launch Event" },
-      { href: "/scooteasy", labelKey: "common.footer.scooteasy", defaultLabel: "ScootEasy" },
-    ],
-  },
-  {
-    titleKey: "common.footer.solutionsHeading",
-    defaultTitle: "Solutions",
-    links: [
-      { href: "/solutions#scooters", labelKey: "common.footer.scooterSharing", defaultLabel: "Scooter Sharing" },
-      { href: "/solutions#ebikes", labelKey: "common.footer.ebikeSharing", defaultLabel: "E-Bike Sharing" },
-      { href: "/solutions#mopeds", labelKey: "common.footer.mopedSharing", defaultLabel: "Moped Sharing" },
-      { href: "/solutions#motorcycles", labelKey: "common.footer.motorcycleSharing", defaultLabel: "Motorcycle Sharing" },
-      { href: "/solutions#cars", labelKey: "common.footer.carSharing", defaultLabel: "Car Sharing" },
-    ],
-  },
-  {
-    titleKey: "common.footer.platformHeading",
+    titleKey: "common.nav.platform",
     defaultTitle: "Platform",
     links: [
-      { href: "/solutions#rider-app", labelKey: "common.footer.riderApp", defaultLabel: "Rider App" },
-      { href: "/platform/fleet-dashboard", labelKey: "common.footer.operatorDashboard", defaultLabel: "Operator Dashboard" },
-      { href: "/platform/fleet-management", labelKey: "common.footer.fleetManagement", defaultLabel: "Fleet Management" },
-      { href: "/solutions#payments", labelKey: "common.footer.payments", defaultLabel: "Payments" },
-      { href: "/solutions#telematics", labelKey: "common.footer.iotTelematics", defaultLabel: "IoT & Telematics" },
+      {
+        href: "/platform/fleet-dashboard",
+        labelKey: "common.nav.platformMega.fleetDashboard.title",
+        defaultLabel: "Fleet Dashboard",
+      },
+      {
+        href: "/platform/fleet-management",
+        labelKey: "common.nav.platformMega.fleetManagement.title",
+        defaultLabel: "Fleet & Geo-Fencing",
+      },
+      {
+        href: "/platform/vehicle-management",
+        labelKey: "common.nav.platformMega.vehicleManagement.title",
+        defaultLabel: "Vehicle Management",
+      },
+      {
+        href: "/platform/riders-management",
+        labelKey: "common.nav.platformMega.ridersManagement.title",
+        defaultLabel: "Riders & Rides",
+      },
+      {
+        href: "/platform/pricing-revenue",
+        labelKey: "common.nav.platformMega.pricingRevenue.title",
+        defaultLabel: "Revenue & Pricing Plans",
+      },
+      {
+        href: "/platform/commands",
+        labelKey: "common.nav.platformMega.commands.title",
+        defaultLabel: "IoT & Commands",
+      },
+      {
+        href: "/platform/maps",
+        labelKey: "common.nav.platformMega.maps.title",
+        defaultLabel: "Live Maps & Zones",
+      },
     ],
   },
   {
-    titleKey: "common.footer.supportHeading",
-    defaultTitle: "Support",
+    titleKey: "common.nav.industries",
+    defaultTitle: "Products",
     links: [
-      { href: "/contact", labelKey: "common.footer.support247", defaultLabel: "24/7 Customer Support" },
-      { href: "/academy", labelKey: "common.footer.helpCentre", defaultLabel: "Trekk Academy" },
-      { href: "/contact", labelKey: "common.footer.partnerSupport", defaultLabel: "Partner Support" },
-      { href: "/contact", labelKey: "common.footer.technicalSupport", defaultLabel: "Technical Support" },
+      {
+        href: "/industries/vehicle-sharing",
+        labelKey: "common.nav.industriesMega.vehicleSharing.title",
+        defaultLabel: "Vehicle sharing software",
+      },
+      {
+        href: "/industries/digital-rental",
+        labelKey: "common.nav.industriesMega.digitalRental.title",
+        defaultLabel: "Digital rental software",
+      },
+      {
+        href: "/industries/ride-hailing",
+        labelKey: "common.nav.industriesMega.rideHailing.title",
+        defaultLabel: "Ride-hailing software",
+      },
+      {
+        href: "/solutions",
+        labelKey: "common.nav.solutions",
+        defaultLabel: "Trekk Solutions",
+      },
+      {
+        href: "/pricing",
+        labelKey: "common.nav.pricing",
+        defaultLabel: "Pricing",
+      },
+    ],
+  },
+  {
+    titleKey: "common.nav.learn",
+    defaultTitle: "Learn",
+    links: [
+      {
+        href: "/academy#blog",
+        labelKey: "common.nav.learnSub.blog",
+        defaultLabel: "Blog",
+      },
+      {
+        href: "/academy#resources",
+        labelKey: "common.nav.learnSub.resources",
+        defaultLabel: "Resources",
+      },
+      {
+        href: "/calculator",
+        labelKey: "common.nav.calculator",
+        defaultLabel: "Calculator",
+      },
+      {
+        href: "/academy",
+        labelKey: "common.nav.academy",
+        defaultLabel: "Trekk Academy",
+      },
+      {
+        href: "/safety",
+        labelKey: "common.nav.learnSub.safety",
+        defaultLabel: "Safety",
+      },
+    ],
+  },
+  {
+    titleKey: "common.nav.company",
+    defaultTitle: "Company",
+    links: [
+      {
+        href: "/about",
+        labelKey: "common.nav.companySub.aboutUs",
+        defaultLabel: "About Us",
+      },
+      {
+        href: "/community",
+        labelKey: "common.nav.companySub.community",
+        defaultLabel: "Community",
+      },
+      {
+        href: "/sustainability",
+        labelKey: "common.nav.companySub.sustainability",
+        defaultLabel: "Sustainability",
+      },
+      {
+        href: "/solutions#vehicles",
+        labelKey: "common.nav.companySub.vehicleShop",
+        defaultLabel: "Vehicle Shop",
+      },
+      {
+        href: "/partners",
+        labelKey: "common.footer.partners",
+        defaultLabel: "Partners",
+      },
+      {
+        href: "/launch",
+        labelKey: "common.footer.launch",
+        defaultLabel: "Launch Event",
+      },
+      {
+        href: "/contact",
+        labelKey: "common.nav.contact",
+        defaultLabel: "Contact",
+      },
     ],
   },
 ];

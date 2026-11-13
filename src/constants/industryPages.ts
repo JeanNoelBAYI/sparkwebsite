@@ -74,7 +74,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.vehicleSharing.desc",
     defaultDesc:
       "Suited for any type of sharing: kick scooters, scooters, bikes, mopeds, motorcycles, cars, trucks, vans, e-trikes, or custom electric fleets.",
-    image: "/images/mob-1.png",
+    image: "/images/product-1.png",
     bgImage: "/images/bg-1.png",
     imageAlt: "Trekk Vehicle Sharing Software Mobile App",
     stats: SHARED_STATS,
@@ -96,7 +96,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.digitalRental.desc",
     defaultDesc:
       "Fully automate your customer journey — from ID verification and booking to keyless vehicle access.",
-    image: "/images/mob-2.png",
+    image: "/images/com-5.png",
     bgImage: "/images/bg-2.png",
     imageAlt: "Trekk Digital Rental Software Mobile App",
     stats: SHARED_STATS,
@@ -152,7 +152,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.rideHailing.desc",
     defaultDesc:
       "All the technology you need to launch your own ride-hailing or taxi business. Cars, vans, trucks, tricycles, boats and more.",
-    image: "/images/mob-3.png",
+    image: "/images/product-3.png",
     bgImage: "/images/bg-3.png",
     imageAlt: "Trekk Ride-Hailing Software Mobile App",
     stats: SHARED_STATS,

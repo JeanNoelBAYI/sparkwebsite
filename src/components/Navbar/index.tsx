@@ -217,22 +217,24 @@ export default function Navbar() {
                                       className="group block rounded-2xl p-3 -m-3 transition-colors hover:bg-slate-50/90"
                                     >
                                       {sub.image && (
-                                        <div className="mb-4 relative flex h-56 w-full items-center justify-center">
+                                        <div className="mb-4 relative flex h-60 w-full items-center justify-center">
                                           {sub.bgImage && (
-                                            <Image
-                                              src={sub.bgImage}
-                                              alt=""
-                                              fill
-                                              className="object-contain transition-transform duration-500 group-hover:scale-105"
-                                            />
+                                            <div className="pointer-events-none absolute inset-4">
+                                              <Image
+                                                src={sub.bgImage}
+                                                alt=""
+                                                fill
+                                                className="object-contain transition-transform duration-500 group-hover:scale-105"
+                                              />
+                                            </div>
                                           )}
                                           <div className="relative z-10 flex h-full w-full items-center justify-center">
                                             <Image
                                               src={sub.image}
                                               alt={t(sub.labelKey, sub.defaultLabel)}
-                                              width={360}
-                                              height={480}
-                                              className="h-52 w-auto object-contain drop-shadow-[0_14px_24px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105"
+                                              width={420}
+                                              height={560}
+                                              className="h-60 w-auto rounded-2xl object-contain drop-shadow-[0_14px_24px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105"
                                             />
                                           </div>
                                         </div>
