@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "@src/components/ui/button";
 import { useTranslation } from "@src/hooks/useTranslation";
@@ -18,29 +19,24 @@ export default function ProductHero({
   return (
     <section className="container mx-auto px-4 pt-24 pb-6 sm:px-6 lg:px-8 lg:pt-28">
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-        {/* Left Visual Showcase with Paired Background */}
-        <div className="lg:col-span-5">
-          <div className="relative mx-auto flex h-[450px] sm:h-[520px] lg:h-[560px] w-full max-w-[540px] items-center justify-center">
-            <div className="pointer-events-none absolute inset-6 sm:inset-8">
-              <Image
-                src={pageData.bgImage}
-                alt=""
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="relative z-10 flex h-full w-full items-center justify-center">
-              <Image
-                src={pageData.image}
-                alt={pageData.imageAlt}
-                width={1290}
-                height={2796}
-                className="h-[450px] sm:h-[520px] lg:h-[560px] w-auto rounded-3xl object-contain drop-shadow-[0_22px_38px_rgba(0,0,0,0.35)]"
-                priority
-              />
-            </div>
-          </div>
+        {/* Left Visual Showcase (No bg-1..3, rounded-md, Framer Motion) */}
+        <div className="lg:col-span-5 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 18 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
+            className="w-full max-w-[560px]"
+          >
+            <Image
+              src={pageData.image}
+              alt={pageData.imageAlt}
+              width={1200}
+              height={900}
+              className="w-full h-auto rounded-md object-cover shadow-[0_22px_38px_rgba(0,0,0,0.22)]"
+              priority
+            />
+          </motion.div>
         </div>
 
         {/* Right Copy + Book Demo CTA + 4-Column Stats Bar */}
@@ -89,4 +85,3 @@ export default function ProductHero({
     </section>
   );
 }
-

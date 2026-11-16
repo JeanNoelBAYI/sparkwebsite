@@ -21,8 +21,13 @@ export default function PlatformSections({
         badge={t(pageData.badgeKey, pageData.defaultBadge)}
         title={t(pageData.titleKey, pageData.defaultTitle)}
         description={t(pageData.descKey, pageData.defaultDesc)}
-        ctaLabel={t("platform.common.bookDemo", "Book Demo")}
-        ctaHref="/contact"
+        ctaLabel={
+          pageData.ctaHref
+            ? t(pageData.ctaKey, pageData.defaultCta)
+            : t("platform.common.bookDemo", "Book Demo")
+        }
+        ctaHref={pageData.ctaHref ?? "/contact"}
+        images={pageData.bannerImages}
       />
       <PlatformCapabilities pageData={pageData} />
       <PlatformWorkflow pageData={pageData} />

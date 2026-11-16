@@ -14,6 +14,12 @@ export type PlatformWorkflowStep = {
   defaultDesc: string;
 };
 
+export type PlatformBannerImages = {
+  left: string;
+  center: string;
+  right: string;
+};
+
 export type PlatformPageData = {
   slug: string;
   badgeKey: string;
@@ -24,6 +30,8 @@ export type PlatformPageData = {
   defaultDesc: string;
   ctaKey: string;
   defaultCta: string;
+  ctaHref?: string;
+  bannerImages?: PlatformBannerImages;
   sectionEyebrowKey: string;
   defaultSectionEyebrow: string;
   sectionTitleKey: string;
@@ -48,6 +56,11 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
       "Monitor active rides, live fleet status, revenue performance, and operational alerts from a single real-time dashboard built for shared mobility operators.",
     ctaKey: "platform.common.bookDemo",
     defaultCta: "Book Demo",
+    bannerImages: {
+      left: "/images/assets/corporate fleet 4.jpg",
+      center: "/images/assets/app2.jpg",
+      right: "/images/assets/corporate fleet2.jpg",
+    },
     sectionEyebrowKey: "platform.fleetDashboard.secEyebrow",
     defaultSectionEyebrow: "Live Operations Overview",
     sectionTitleKey: "platform.fleetDashboard.secTitle",
@@ -128,6 +141,11 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
       "Create and manage city fleets, draw polygon service areas, enforce low-speed and no-go zones, configure designated parking hubs, and automate daily operation hours.",
     ctaKey: "platform.fleetManagement.cta",
     defaultCta: "Book a Fleet Management Demo",
+    bannerImages: {
+      left: "/images/assets/coporate fleet2.jpg",
+      center: "/images/assets/corporate fleet 3.jpg",
+      right: "/images/assets/corporate fleet.jpg",
+    },
     sectionEyebrowKey: "platform.fleetManagement.secEyebrow",
     defaultSectionEyebrow: "Core Module Capabilities",
     sectionTitleKey: "platform.fleetManagement.secTitle",
@@ -288,6 +306,11 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
       "View every registered rider account, monitor active rides in progress, end stuck trips remotely, and reconcile ride payments and wallet transactions effortlessly.",
     ctaKey: "platform.ridersManagement.cta",
     defaultCta: "See Rider Operations",
+    bannerImages: {
+      left: "/images/assets/sebastian-puskeiler-tOtjBu6WVBo-unsplash.jpg",
+      center: "/images/assets/spencer-gu-mKiUJq2mT1Y-unsplash.jpg",
+      right: "/images/assets/tourism fleet.jpg",
+    },
     sectionEyebrowKey: "platform.ridersManagement.secEyebrow",
     defaultSectionEyebrow: "Customer & Trip Oversight",
     sectionTitleKey: "platform.ridersManagement.secTitle",
@@ -366,8 +389,14 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
     descKey: "platform.pricingRevenue.desc",
     defaultDesc:
       "Build fleet-specific pricing plans with custom unlock fees, per-minute rates, pause fees, and reservation charges while tracking revenue growth in real time.",
-    ctaKey: "platform.pricingRevenue.cta",
-    defaultCta: "Explore Revenue Tools",
+    ctaKey: "common.nav.pricing",
+    defaultCta: "Pricing",
+    ctaHref: "/pricing",
+    bannerImages: {
+      left: "/images/product-2.png",
+      center: "/images/revenue-dashboard-trekk.png",
+      right: "/images/mobile/payment-history.png",
+    },
     sectionEyebrowKey: "platform.pricingRevenue.secEyebrow",
     defaultSectionEyebrow: "Monetization Engine",
     sectionTitleKey: "platform.pricingRevenue.secTitle",
@@ -528,6 +557,11 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
       "Create reusable IoT command templates, dispatch remote lock/unlock or telemetry requests to vehicles, and maintain a complete audit log of every executed command.",
     ctaKey: "platform.commands.cta",
     defaultCta: "Explore IoT Commands",
+    bannerImages: {
+      left: "/images/assets/go-e-98r1jV34oHo-unsplash.jpg",
+      center: "/images/assets/hNCsl.jpg",
+      right: "/images/assets/hotel rental.jpg",
+    },
     sectionEyebrowKey: "platform.commands.secEyebrow",
     defaultSectionEyebrow: "Hardware Connectivity",
     sectionTitleKey: "platform.commands.secTitle",
@@ -608,6 +642,11 @@ export const PLATFORM_PAGES: Record<string, PlatformPageData> = {
       "Create promo codes, launch activity-based marketing campaigns, inspect promo coverage on the map, and archive past promotions with full redemption tracking.",
     ctaKey: "platform.promos.cta",
     defaultCta: "See Growth & Promos",
+    bannerImages: {
+      left: "/images/assets/5r1rA.jpg",
+      center: "/images/assets/afif-ramdhasuma-Iu3PolhJ0zA-unsplash.jpg",
+      right: "/images/assets/javygo-S0fHHKJO8dU-unsplash.jpg",
+    },
     sectionEyebrowKey: "platform.promos.secEyebrow",
     defaultSectionEyebrow: "Rider Growth Engine",
     sectionTitleKey: "platform.promos.secTitle",

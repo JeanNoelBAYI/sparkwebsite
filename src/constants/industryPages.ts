@@ -21,7 +21,6 @@ export type IndustryPageData = {
   descKey: string;
   defaultDesc: string;
   image: string;
-  bgImage: string;
   imageAlt: string;
   stats: IndustryStat[];
   highlightsLayout: "two-column-models" | "four-cards" | "three-cards";
@@ -74,8 +73,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.vehicleSharing.desc",
     defaultDesc:
       "Suited for any type of sharing: kick scooters, scooters, bikes, mopeds, motorcycles, cars, trucks, vans, e-trikes, or custom electric fleets.",
-    image: "/images/product-1.png",
-    bgImage: "/images/bg-1.png",
+    image: "/images/assets/golf cart rental.jpg",
     imageAlt: "Trekk Vehicle Sharing Software Mobile App",
     stats: SHARED_STATS,
     highlightsLayout: "two-column-models",
@@ -96,8 +94,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.digitalRental.desc",
     defaultDesc:
       "Fully automate your customer journey — from ID verification and booking to keyless vehicle access.",
-    image: "/images/com-5.png",
-    bgImage: "/images/bg-2.png",
+    image: "/images/assets/WjxwS.jpg",
     imageAlt: "Trekk Digital Rental Software Mobile App",
     stats: SHARED_STATS,
     highlightsLayout: "four-cards",
@@ -152,8 +149,7 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     descKey: "industries.rideHailing.desc",
     defaultDesc:
       "All the technology you need to launch your own ride-hailing or taxi business. Cars, vans, trucks, tricycles, boats and more.",
-    image: "/images/product-3.png",
-    bgImage: "/images/bg-3.png",
+    image: "/images/assets/hotel fleet4.jpg",
     imageAlt: "Trekk Ride-Hailing Software Mobile App",
     stats: SHARED_STATS,
     highlightsLayout: "three-cards",

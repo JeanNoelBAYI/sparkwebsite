@@ -117,8 +117,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.vehicleSharing.desc",
         defaultDescription:
           "All the technology you need to launch your own scooter, bike, moped and car sharing fleet.",
-        image: "/images/product-1.png",
-        bgImage: "/images/bg-1.png",
+        image: "/images/assets/X9aR5.jpg",
         hasRightArrow: true,
       },
       {
@@ -128,8 +127,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.digitalRental.desc",
         defaultDescription:
           "Automate your rental business — from ID verification and digital onboarding to keyless access.",
-        image: "/images/com-5.png",
-        bgImage: "/images/bg-2.png",
+        image: "/images/assets/s7o7k.jpg",
         hasRightArrow: true,
       },
       {
@@ -139,8 +137,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         descriptionKey: "common.nav.industriesMega.rideHailing.desc",
         defaultDescription:
           "Ready-to-go tech solution for ride-hailing and taxi businesses. Cars, vans, tricycles and more.",
-        image: "/images/product-3.png",
-        bgImage: "/images/bg-3.png",
+        image: "/images/assets/jordan-N1NvJoqMg9g-unsplash.jpg",
         hasRightArrow: true,
       },
     ],

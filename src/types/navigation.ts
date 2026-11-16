@@ -8,7 +8,6 @@ export type NavSubItem = {
   defaultDescription?: string;
   megaMenuSection?: "core" | "more";
   image?: string;
-  bgImage?: string;
   hasRightArrow?: boolean;
 };
 
