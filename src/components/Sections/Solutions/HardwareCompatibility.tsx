@@ -15,7 +15,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v1.desc",
         "Cellular remote lock/unlock, geofenced speed limits, and tip-over alerts."
       ),
-      image: "/images/trekk-home-5.png",
+      image: "/images/assets/s7o7k.jpg",
     },
     {
       title: t("solutions.iot.v2.title", "Electric Bicycles"),
@@ -23,7 +23,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v2.desc",
         "Live GPS location, battery charge status, motor diagnostics, and wheel locks."
       ),
-      image: "/images/electric-bicycle.png",
+      image: "/images/assets/X9aR5.jpg",
     },
     {
       title: t("solutions.iot.v3.title", "Electric Mopeds"),
@@ -31,7 +31,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v3.desc",
         "Smart helmet-box unlock, remote ignition, and predictive maintenance schedules."
       ),
-      image: "/images/electric-mopeds.png",
+      image: "/images/assets/hotel fleet4.jpg",
     },
     {
       title: t("solutions.iot.v4.title", "Sitting Scooters"),
@@ -39,7 +39,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v4.desc",
         "Dual-passenger stability telemetry, regenerative braking analytics, and theft alerts."
       ),
-      image: "/images/electric-Sitting-Scooters.png",
+      image: "/images/assets/golf carte.jpg",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v7.desc",
         "Courier route tracking, driver safety scorecards, and payload compartment lock status."
       ),
-      image: "/images/trekk-home.png",
+      image: "/images/assets/corporate fleet 4.jpg",
     },
     {
       title: t("solutions.iot.v6.title", "Commercial Electric Motorcycles"),
@@ -58,7 +58,7 @@ export default function HardwareCompatibility() {
         "solutions.iot.v6.desc",
         "Battery swap station check-ins, swappable pack telemetry, and fleet-wide battery health."
       ),
-      image: "/images/trekk-home-2.png",
+      image: "/images/assets/jordan-N1NvJoqMg9g-unsplash.jpg",
     },
   ];
 
@@ -106,7 +106,7 @@ export default function HardwareCompatibility() {
                       alt={v.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -144,7 +144,7 @@ export default function HardwareCompatibility() {
                       alt={v.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 25vw"
-                      className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="sm:col-span-7 space-y-2">
