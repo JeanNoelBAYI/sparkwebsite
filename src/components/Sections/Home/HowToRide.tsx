@@ -28,7 +28,7 @@ const B2B_IMAGES = [
 export default function HomeHowToRide() {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div className="rounded-3xl border border-border bg-gradient-to-br from-white to-[#F6FAF8] dark:from-[#0E1522] dark:to-[#0B1220] p-6 sm:p-10 lg:p-12 shadow-sm">
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Tailwind CSS Masonry Grid */}
           <div className="lg:col-span-7 space-y-4">
@@ -41,7 +41,7 @@ export default function HomeHowToRide() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.1 }}
                   whileHover={{ scale: 1.02 }}
-                  className="break-inside-avoid overflow-hidden rounded-2xl border border-border/70 shadow-lg"
+                  className="break-inside-avoid overflow-hidden rounded-2xl"
                 >
                   <Image
                     src={img.src}
