@@ -24,7 +24,7 @@ export default function CommunityBanner() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#12D18E] backdrop-blur-md">
               <Users className="size-4" />
-              <span>Our Community</span>
+              <span>Partner &amp; Campus Network</span>
             </div>
 
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.5rem] leading-[1.08]">
@@ -32,17 +32,17 @@ export default function CommunityBanner() {
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-[#E3EDE8] sm:text-lg">
-              Join the Trekk Community: Where Shared Mobility Meets Sustainable Living. Explore how we&apos;re reshaping community transportation and fostering a greener future, one ride at a time.
+              Partner with the Trekk Ecosystem: Where Fleet Operators, Universities, and Enterprises Build Sustainable Mobility. See how our B2B partners are transforming campus and urban transit across Africa.
             </p>
 
-            {/* Locate Us Near You */}
+            {/* Operator & Institutional Network */}
             <div className="border-t border-white/10 pt-5 space-y-2 max-w-xl">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#12D18E]">
                 <MapPin className="size-3.5" />
-                <span>Locate Us Near You</span>
+                <span>Expanding Operator Footprint</span>
               </div>
               <p className="text-sm sm:text-base text-[#94A89E] leading-relaxed">
-                Our network of communities grows by the day – locate us nearby.
+                Our network of institutional deployments and local fleet partners grows every quarter.
               </p>
             </div>
 
@@ -52,7 +52,7 @@ export default function CommunityBanner() {
                   size="lg"
                   className="bg-[#12D18E] text-[#0B1220] hover:bg-[#0fb87c] font-bold gap-2 rounded-full px-7 shadow-xl shadow-[#12D18E]/20"
                 >
-                  <span>Find TREKK on Your Campus</span>
+                  <span>Explore Campus Deployments</span>
                   <ArrowRight className="size-4" />
                 </Button>
               </a>
@@ -74,7 +74,7 @@ export default function CommunityBanner() {
             >
               <Image
                 src="/images/com-13.png"
-                alt="Trekk Mobility campus and community riders"
+                alt="Trekk Mobility B2B campus and operator deployments"
                 width={1200}
                 height={900}
                 className="w-full h-auto rounded-md object-cover"
@@ -87,4 +87,3 @@ export default function CommunityBanner() {
     </section>
   );
 }
-

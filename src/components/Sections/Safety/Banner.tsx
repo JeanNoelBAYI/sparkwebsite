@@ -24,7 +24,7 @@ export default function SafetyBanner() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#12D18E] backdrop-blur-md">
               <ShieldCheck className="size-4" />
-              <span>Rider Safety Guide</span>
+              <span>Fleet Safety &amp; Compliance</span>
             </div>
 
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.75rem] leading-[1.06]">
@@ -32,26 +32,26 @@ export default function SafetyBanner() {
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-[#E3EDE8] sm:text-xl">
-              Ride with confidence on our scooters. Your safety is our top priority.
+              Built-in safety governance for commercial fleets. Protect riders, reduce liability, and meet municipal and campus regulations.
             </p>
 
             <p className="max-w-xl text-sm leading-relaxed text-[#94A89E] sm:text-base">
-              Whether you are commuting across campus, running quick errands, or exploring your neighborhood, following core riding habits keeps you, pedestrians, and fellow road users safe on every trip.
+              Trekk Mobility equips fleet operators, universities, and hospitality hubs with automated geofence speed limits, digital rider onboarding, and preventive hardware diagnostics — keeping every vehicle compliant and road-ready.
             </p>
 
             {/* Quick Safety Highlights */}
             <div className="grid grid-cols-3 gap-4 pt-2 border-t border-white/10 max-w-lg">
               <div>
                 <p className="font-display text-xl sm:text-2xl font-extrabold text-[#12D18E]">20 km/h</p>
-                <p className="text-xs text-[#94A89E]">Recommended max speed</p>
+                <p className="text-xs text-[#94A89E]">Configurable zone cap</p>
               </div>
               <div>
-                <p className="font-display text-xl sm:text-2xl font-extrabold text-white">1 Rider</p>
-                <p className="text-xs text-[#94A89E]">Per scooter at a time</p>
+                <p className="font-display text-xl sm:text-2xl font-extrabold text-white">100%</p>
+                <p className="text-xs text-[#94A89E]">Digital rider onboarding</p>
               </div>
               <div>
                 <p className="font-display text-xl sm:text-2xl font-extrabold text-white">4-Point</p>
-                <p className="text-xs text-[#94A89E]">Pre-ride safety check</p>
+                <p className="text-xs text-[#94A89E]">Field inspection protocol</p>
               </div>
             </div>
 
@@ -61,7 +61,7 @@ export default function SafetyBanner() {
                   size="lg"
                   className="bg-[#12D18E] text-[#0B1220] hover:bg-[#0fb87c] font-bold gap-2 rounded-full px-7 shadow-xl shadow-[#12D18E]/20"
                 >
-                  <span>Read Safety Guidelines</span>
+                  <span>Explore Safety Controls</span>
                   <ArrowRight className="size-4" />
                 </Button>
               </a>
@@ -83,7 +83,7 @@ export default function SafetyBanner() {
             >
               <Image
                 src="/images/com-1.png"
-                alt="Trekk Scooters Safety First"
+                alt="Trekk Mobility Fleet Safety & Compliance"
                 width={1200}
                 height={900}
                 className="w-full h-auto rounded-md object-cover"

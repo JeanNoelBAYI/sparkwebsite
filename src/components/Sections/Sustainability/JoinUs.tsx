@@ -51,7 +51,7 @@ export default function SustainabilityJoinUs() {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-            We&apos;re more than just a ride – we&apos;re a movement towards a greener, more sustainable Africa. Join us in our mission to transform urban mobility, empower communities, and preserve the planet for future generations. Together, we can create a brighter, cleaner, and more sustainable future for all.
+            We&apos;re more than software — we&apos;re the B2B technology backbone for a greener, more sustainable Africa. Partner with Trekk to launch zero-emission fleets for your city, university campus, residential estate, or commercial enterprise. Together, we can build cleaner, smarter transit infrastructure for generations to come.
           </p>
 
           <div className="pt-2">

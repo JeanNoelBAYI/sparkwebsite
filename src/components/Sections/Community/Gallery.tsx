@@ -33,13 +33,13 @@ export default function CommunityGallery() {
       >
         <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#12D18E]">
           <span className="size-2 rounded-full bg-[#12D18E] animate-pulse" />
-          <span>Community in Motion</span>
+          <span>Deployments in Motion</span>
         </div>
         <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          Life on Trekk Across Nigeria
+          Fleet Rollouts Across Nigeria
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Snapshots from campus launches, rider meetups, and everyday sustainable commutes powered by Trekk Mobility.
+          Snapshots from operator launches, campus fleet deployments, and enterprise mobility operations powered by Trekk Mobility.
         </p>
       </motion.div>
 

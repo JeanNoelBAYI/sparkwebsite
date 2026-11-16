@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const PRE_RIDE_STEPS = [
-  "Inspect battery charge in the Trekk app and on the handlebar display before unlocking.",
-  "Squeeze both hand brakes and switch on the front headlight to confirm responsive stopping and visibility.",
-  "Check tire pressure, deck grip, and handlebar stability before stepping onto the scooter.",
-  "Plan your route along designated scooter lanes and avoid congested walkways.",
+  "Enforce automated battery-threshold locks so low-charge vehicles stay offline until swapped by your crew.",
+  "Require field technicians to log brake, headlight, and IoT lock checks inside the Operations App.",
+  "Configure geofenced speed corridors, slow-ride zones, and no-go areas directly on your live fleet map.",
+  "Display mandatory in-app safety onboarding and local compliance rules before any rider unlocks a vehicle.",
 ];
 
 export default function SafetyGettingStarted() {
@@ -24,11 +24,11 @@ export default function SafetyGettingStarted() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="lg:col-span-6 space-y-5"
+          className="lg:col-span-5 space-y-5"
         >
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#12D18E]">
             <span className="size-2 rounded-full bg-[#12D18E] animate-pulse" />
-            <span>Safety Guidelines</span>
+            <span>Operator Safety Protocol</span>
           </div>
 
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl leading-[1.1]">
@@ -36,7 +36,7 @@ export default function SafetyGettingStarted() {
           </h2>
 
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Before you hop on a scooter, take a moment to familiarize yourself with the safety guidelines. A quick 30-second inspection and awareness of local riding rules help prevent avoidable accidents and ensure a smooth journey from start to finish.
+            Before launching your fleet, configure Trekk&apos;s built-in safety guardrails and field inspection workflows. Automated in-app tutorials and pre-deployment checks help your operation prevent incidents and maintain high fleet uptime from day one.
           </p>
 
           <ul className="space-y-3 pt-2">
@@ -55,15 +55,15 @@ export default function SafetyGettingStarted() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
           whileHover={{ scale: 1.03 }}
-          className="lg:col-span-6 flex items-center justify-center lg:justify-end"
+          className="lg:col-span-7 flex items-center justify-center lg:justify-end"
         >
-          <div className="w-full max-w-[540px]">
+          <div className="w-full">
             <Image
-              src="/images/safety-6.png"
-              alt="Getting started with Trekk scooter safety guidelines"
-              width={1000}
-              height={750}
-              className="w-full h-auto rounded-md object-contain mix-blend-multiply dark:mix-blend-normal"
+              src="/images/assets/joshua-fernandez-rrw7d4f-B3Q-unsplash.jpg"
+              alt="Trekk fleet safety protocol and rider onboarding"
+              width={1920}
+              height={824}
+              className="w-full h-auto rounded-md object-contain"
             />
           </div>
         </motion.div>

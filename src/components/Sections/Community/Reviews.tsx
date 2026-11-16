@@ -6,24 +6,24 @@ import { Star, Quote } from "lucide-react";
 
 const REVIEWS = [
   {
-    name: "Tunde Adeyemi",
-    role: "Final Year Engineering Student · FUTA",
+    name: "Dr. Babatunde Adeyemi",
+    role: "Director of Campus Services · Partner University",
     quote:
-      "Getting from the hostel to the 8 AM lecture hall used to take a 25-minute walk in the sun. With Trekk scooters, I scan the QR code and I'm at my faculty in four minutes flat.",
+      "Deploying an electric micromobility fleet on campus used to look like a logistical headache. Trekk gave us geofenced parking corrals, speed corridors, and full operational visibility in under three weeks.",
     rating: 5,
   },
   {
     name: "Amina Bello",
-    role: "Postgraduate Researcher · Pan-Atlantic University",
+    role: "Operations Director · Urban Fleet Operator",
     quote:
-      "The campus feels quieter and cleaner with Trekk. Topping up my wallet in Naira takes seconds, and the geofenced parking zones keep the walkways neat for everyone.",
+      "Having Naira and mobile money billing built natively into our white-label app removed our biggest adoption barrier. The Field Operations App also cut our battery-swap turnaround time in half.",
     rating: 5,
   },
   {
     name: "Chukwuemeka Okafor",
-    role: "Campus Operations Lead · Lagos State University",
+    role: "Fleet Operations Lead · Lagos Campus Deployment",
     quote:
-      "Trekk Mobility didn't just drop scooters on campus — their team trained local student ambassadors, set up safe riding corridors, and gave our community a reliable zero-emission commute.",
+      "Trekk Mobility didn't just hand us software — their team trained our local technicians, configured IoT telemetry on our existing vehicles, and helped us scale a profitable zero-emission fleet.",
     rating: 5,
   },
 ];
@@ -40,13 +40,13 @@ export default function CommunityReviews() {
       >
         <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#12D18E]">
           <span className="size-2 rounded-full bg-[#12D18E] animate-pulse" />
-          <span>Rider Voices</span>
+          <span>Partner &amp; Operator Voices</span>
         </div>
         <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          Loved by Riders Across Campus Communities
+          Trusted by Fleet Operators &amp; Institutional Partners
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Hear how students, researchers, and campus partners use Trekk Mobility every day to save time and lower their carbon footprint.
+          Hear how mobility founders, university administrators, and enterprise fleet teams use Trekk Mobility to launch and scale faster.
         </p>
       </motion.div>
 
@@ -86,4 +86,3 @@ export default function CommunityReviews() {
     </section>
   );
 }
-

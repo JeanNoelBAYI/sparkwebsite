@@ -77,15 +77,15 @@ export default function CommunityCampuses() {
       >
         <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#12D18E]">
           <span className="size-2 rounded-full bg-[#12D18E] animate-pulse" />
-          <span>Campus Network</span>
+          <span>Institutional Deployments</span>
         </div>
 
         <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl leading-[1.1]">
-          Find TREKK on your Campus
+          Trusted Across Leading Campuses
         </h2>
 
         <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Across Nigeria&apos;s leading universities, Trekk Mobility is replacing long walks and noisy campus shuttles with clean, quiet, app-unlocked electric scooters. Students, faculty, and campus staff rely on Trekk every day to move effortlessly between lecture halls, hostels, libraries, and innovation hubs — cutting carbon emissions while building greener, smarter campus communities.
+          Across Nigeria&apos;s leading universities, Trekk Mobility partners with campus administrations and fleet operators to replace fuel-powered shuttles with clean, connected electric fleets. Our B2B operating system powers live telemetry, geofenced safety corridors, and local-currency billing across lecture halls, hostels, and innovation hubs.
         </p>
       </motion.div>
 

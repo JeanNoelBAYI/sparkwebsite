@@ -48,7 +48,7 @@ export default function GreenTech() {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-            We&apos;re constantly investing in cutting-edge technology and innovation to enhance the sustainability of our platform. From swappable battery scooters to intelligent proprietary fleet management systems designed to optimize efficiency, we&apos;re leveraging the latest advancements to minimize our environmental impact and maximize our positive contribution to the planet. Additionally, our technology allows riders to be aware of their carbon footprint by tracking their CO2 emissions saved while riding Trekk.
+            We&apos;re constantly investing in cutting-edge technology to maximize the sustainability of every partner fleet. From swappable-battery hardware support to intelligent fleet management systems designed to optimize dispatch efficiency, we minimize environmental impact at scale. Additionally, our platform equips operators and enterprise partners with real-time fleet-wide CO₂ emissions-saved reporting.
           </p>
         </motion.div>
 

@@ -32,7 +32,7 @@ export default function EcoTransportation() {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-            By offering Trekk as an alternative mode of transportation we&apos;re significantly reducing the carbon footprint associated with traditional gasoline-powered vehicles. Our fleet of e-scooters produces zero emissions, helping to combat air pollution and mitigate the adverse effects of climate change. Through our convenient and accessible platform, users can embrace eco-friendly commuting options without compromising on convenience or reliability.
+            By equipping commercial operators, universities, and enterprises with electric fleet infrastructure, Trekk significantly reduces the carbon footprint associated with traditional gasoline-powered shuttles and vehicles. Our connected e-scooter and EV platform enables zero-emission transit networks that combat air pollution without compromising operational reliability.
           </p>
         </motion.div>
 

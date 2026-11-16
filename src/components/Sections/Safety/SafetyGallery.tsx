@@ -7,27 +7,27 @@ import { motion } from "framer-motion";
 const GALLERY_ITEMS = [
   {
     src: "/images/safety-2.png",
-    alt: "Check the battery level on the scooter",
-    title: "01. Battery Level Check",
-    desc: "Verify sufficient battery charge on the handlebar display and in the app before starting your ride.",
+    alt: "Battery state-of-charge threshold monitoring",
+    title: "01. Battery Health & Swaps",
+    desc: "Automatically flag low-battery vehicles for field swap crews before charge drops below safe limits.",
   },
   {
     src: "/images/safety-3.png",
-    alt: "Always test the brake and light",
-    title: "02. Brakes & Lights",
-    desc: "Squeeze the hand brake to confirm smooth stopping power and ensure the front light is working.",
+    alt: "Brakes and front light diagnostics",
+    title: "02. Brake & Light Verification",
+    desc: "Standardized technician checks ensure responsive braking and full visibility across every shift.",
   },
   {
     src: "/images/safety-4.png",
-    alt: "Verify the condition of the frame",
-    title: "03. Frame Condition",
-    desc: "Inspect the stem, folding latch, and footboard deck to make sure everything feels solid and secure.",
+    alt: "Frame and folding latch inspection",
+    title: "03. Frame & Stem Integrity",
+    desc: "Log structural inspections and damage photos directly in the Trekk Field Operations App.",
   },
   {
     src: "/images/safety-5.png",
-    alt: "Inspect all physical conditions",
-    title: "04. Full Physical Inspection",
-    desc: "Check the wheels, handlebars, bell, and kickstand for any visible wear before you kick off.",
+    alt: "Full fleet physical inspection",
+    title: "04. Preventive Maintenance",
+    desc: "Track wheels, handlebars, bells, and kickstands on scheduled maintenance cycles to maximize uptime.",
   },
 ];
 
@@ -41,12 +41,12 @@ export default function SafetyGallery() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-2xl space-y-3"
       >
-        <span className="eyebrow">Pre-Ride Checklist</span>
+        <span className="eyebrow">Fleet Maintenance &amp; Inspection</span>
         <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          4 Quick Checks Before Every Ride
+          4-Point Field Inspection Standard
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Every Trekk scooter goes through regular fleet maintenance, and a quick personal check before unlocking gives you complete peace of mind.
+          Equip your ground operations team with standardized hardware checks — tracked inside the Trekk Field Operations App before vehicles are deployed.
         </p>
       </motion.div>
 

@@ -183,7 +183,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         defaultLabel: "Safety",
         descriptionKey: "common.nav.learnMega.safety.desc",
         defaultDescription:
-          "Essential scooter riding guidelines, helmet use, scooter lanes, and pedestrian safety.",
+          "Fleet safety governance, geofenced speed limits, rider onboarding, and field inspection standards.",
         megaMenuSection: "core",
       },
       {
@@ -225,7 +225,7 @@ export const NAV_LINKS: NavLinkItem[] = [
         defaultLabel: "Community",
         descriptionKey: "common.nav.companyMega.community.desc",
         defaultDescription:
-          "Discover our growing network of university campuses, rider stories, and sustainable mobility communities.",
+          "Explore our growing network of university deployments, operator partners, and enterprise fleets.",
         megaMenuSection: "core",
       },
       {
