@@ -203,6 +203,11 @@ export const NAV_LINKS: NavLinkItem[] = [
     defaultLabel: "Pricing",
   },
   {
+    href: "/launch",
+    labelKey: "common.nav.officialLaunch",
+    defaultLabel: "Official Launch",
+  },
+  {
     href: "/about",
     labelKey: "common.nav.company",
     defaultLabel: "Company",

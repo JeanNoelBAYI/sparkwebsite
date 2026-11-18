@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Button from "@src/components/ui/button";
 import { Input } from "@src/components/ui/input";
 import { toast } from "sonner";
@@ -17,7 +18,7 @@ export default function LaunchRegistrationForm() {
     email: "",
     organisation: "",
     country: "Nigeria",
-    joiningAs: "Entrepreneur / Prospective Operator",
+    joiningAs: "Prospective operator / partner",
     interest: "",
     _honey: "",
   });
@@ -57,157 +58,217 @@ export default function LaunchRegistrationForm() {
   };
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl" id="register">
-      <div className="rounded-3xl border border-border bg-white p-8 sm:p-12 shadow-lg dark:bg-[#0E1522] space-y-6">
-        <div>
-          <span className="eyebrow">Free Registration</span>
-          <h2 className="text-2xl font-bold font-display sm:text-3xl text-foreground mt-1">
-            Join the Launch Broadcast
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24" id="register">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* Left: 03 — You're Invited */}
+        <div className="lg:col-span-5 space-y-6">
+          <span className="eyebrow">03 &mdash; You&apos;re Invited</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-foreground leading-tight">
+            Your next move could start right here.
           </h2>
-          <p className="text-xs text-muted-foreground mt-1">
-            Reserve your digital seat for the keynote, live operator panels, and press conference.
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Join the official Trekk Mobility launch and digital press conference. Bring your ambition. Bring your questions.
           </p>
+
+          <div className="space-y-4 border-y border-border/60 py-6 text-sm">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block">
+                When
+              </span>
+              <p className="font-bold text-foreground">
+                November 24, 2026 &middot; 2:00 PM WAT (UTC+1)
+              </p>
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block">
+                Where
+              </span>
+              <p className="font-bold text-foreground">Online &middot; Worldwide</p>
+              <p className="text-xs text-muted-foreground">
+                Joining details will be provided separately
+              </p>
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground block">
+                Admission
+              </span>
+              <p className="font-bold text-foreground">Complimentary registration</p>
+            </div>
+          </div>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#12D18E] hover:underline"
+          >
+            <span>Media enquiries? Let&apos;s talk</span>
+            <ArrowUpRight className="size-4" />
+          </Link>
         </div>
 
-        {submitted ? (
-          <div className="rounded-2xl border border-[#12D18E]/30 bg-[#F0FBF5] p-8 text-center space-y-4 dark:bg-[#102A23]/30">
-            <CheckCircle2 className="size-12 text-[#12D18E] mx-auto" />
-            <h3 className="font-display text-xl font-bold text-foreground">
-              You&apos;re Confirmed!
+        {/* Right: Save Your Place Form */}
+        <div className="lg:col-span-7 rounded-3xl border border-border bg-white p-8 sm:p-10 shadow-lg dark:bg-[#0E1522] space-y-6">
+          <div>
+            <span className="eyebrow">Save Your Place</span>
+            <h3 className="text-2xl font-bold font-display sm:text-3xl text-foreground mt-1">
+              Be there for what&apos;s next.
             </h3>
-            <p className="text-xs text-muted-foreground max-w-md mx-auto">
-              Thank you, {formData.firstName}. We&apos;ve reserved your place for the Trekk Mobility Official Launch representing{" "}
-              <strong>{formData.organisation}</strong>. A calendar invitation has been sent to {formData.email}.
+            <p className="text-xs text-muted-foreground mt-1">
+              A few details, and you&apos;re on the list.
             </p>
-            <Button variant="outline" size="sm" onClick={() => setSubmitted(false)}>
-              Register Another Attendee
-            </Button>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              name="_honey"
-              value={formData._honey}
-              onChange={handleChange}
-              className="hidden"
-              tabIndex={-1}
-              autoComplete="off"
-            />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-foreground">
-                  First Name *
-                </label>
-                <Input
-                  name="firstName"
-                  required
-                  placeholder="First name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold mb-1 text-foreground">
-                  Last Name *
-                </label>
-                <Input
-                  name="lastName"
-                  required
-                  placeholder="Last name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-              </div>
+          {submitted ? (
+            <div className="rounded-2xl border border-[#12D18E]/30 bg-[#F0FBF5] p-8 text-center space-y-4 dark:bg-[#102A23]/30">
+              <CheckCircle2 className="size-12 text-[#12D18E] mx-auto" />
+              <h4 className="font-display text-xl font-bold text-foreground">
+                You&apos;re Confirmed!
+              </h4>
+              <p className="text-xs text-muted-foreground max-w-md mx-auto">
+                Thank you, {formData.firstName}. We&apos;ve reserved your place for the Trekk Mobility Official Launch representing{" "}
+                <strong>{formData.organisation}</strong>. Details will be sent to {formData.email}.
+              </p>
+              <Button variant="outline" size="sm" onClick={() => setSubmitted(false)}>
+                Register Another Attendee
+              </Button>
             </div>
-
-            <div>
-              <label className="block text-xs font-semibold mb-1 text-foreground">
-                Email Address *
-              </label>
-              <Input
-                type="email"
-                name="email"
-                required
-                placeholder="name@organization.com"
-                value={formData.email}
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="_honey"
+                value={formData._honey}
                 onChange={handleChange}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
               />
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold mb-1 text-foreground">
-                  Organisation / Venture *
+                  I&apos;m joining as *
+                </label>
+                <select
+                  name="joiningAs"
+                  value={formData.joiningAs}
+                  onChange={handleChange}
+                  className="flex h-11 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-[#12D18E]"
+                >
+                  <option value="Prospective operator / partner">Prospective operator / partner</option>
+                  <option value="Existing fleet / business">Existing fleet / business</option>
+                  <option value="Media / journalist">Media / journalist</option>
+                  <option value="Investor / ecosystem stakeholder">Investor / ecosystem stakeholder</option>
+                  <option value="Other interested attendee">Other interested attendee</option>
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold mb-1 text-foreground">
+                    First name *
+                  </label>
+                  <Input
+                    name="firstName"
+                    required
+                    placeholder="First name"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold mb-1 text-foreground">
+                    Last name *
+                  </label>
+                  <Input
+                    name="lastName"
+                    required
+                    placeholder="Last name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold mb-1 text-foreground">
+                  Email address *
                 </label>
                 <Input
-                  name="organisation"
+                  type="email"
+                  name="email"
                   required
-                  placeholder="Company or university"
-                  value={formData.organisation}
+                  placeholder="name@organization.com"
+                  value={formData.email}
                   onChange={handleChange}
                 />
               </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold mb-1 text-foreground">
+                    Organisation *
+                  </label>
+                  <Input
+                    name="organisation"
+                    required
+                    placeholder="Company or institution"
+                    value={formData.organisation}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold mb-1 text-foreground">
+                    Country *
+                  </label>
+                  <Input
+                    name="country"
+                    required
+                    placeholder="Nigeria, Ghana, Kenya, etc."
+                    value={formData.country}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+
               <div>
                 <label className="block text-xs font-semibold mb-1 text-foreground">
-                  Country *
+                  What would you like to explore? (optional)
                 </label>
-                <Input
-                  name="country"
-                  required
-                  placeholder="Nigeria, Ghana, Kenya, etc."
-                  value={formData.country}
+                <textarea
+                  name="interest"
+                  rows={3}
+                  placeholder="Share any questions or topics you'd like covered..."
+                  value={formData.interest}
                   onChange={handleChange}
+                  className="flex w-full rounded-xl border border-border bg-background p-3 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-[#12D18E]"
                 />
               </div>
-            </div>
 
-            <div>
-              <label className="block text-xs font-semibold mb-1 text-foreground">
-                I Am Joining As *
+              <label className="flex items-start gap-2.5 text-xs text-muted-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  required
+                  className="mt-0.5 rounded border-border accent-[#12D18E]"
+                />
+                <span>
+                  I agree that Trekk Mobility may use these details to manage my registration and contact me about this event.
+                </span>
               </label>
-              <select
-                name="joiningAs"
-                value={formData.joiningAs}
-                onChange={handleChange}
-                className="flex h-11 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-[#12D18E]"
+
+              <Button
+                type="submit"
+                loading={loading}
+                className="w-full h-12 bg-[#12D18E] text-[#0B1220] font-bold text-base hover:bg-[#0fb87c] shadow-md gap-2 rounded-full"
               >
-                <option value="Entrepreneur / Prospective Operator">Entrepreneur / Prospective Operator</option>
-                <option value="Investor / Venture Partner">Investor / Venture Partner</option>
-                <option value="Government / Municipal Official">Government / Municipal Official</option>
-                <option value="University / Institutional Partner">University / Campus Administrator</option>
-                <option value="Media / Press">Media / Journalist</option>
-                <option value="Mobility Enthusiast">Mobility Enthusiast</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold mb-1 text-foreground">
-                What are you most excited to learn about? (Optional)
-              </label>
-              <textarea
-                name="interest"
-                rows={3}
-                placeholder="E.g., battery swap economics, municipal licensing, rider adoption..."
-                value={formData.interest}
-                onChange={handleChange}
-                className="flex w-full rounded-xl border border-border bg-background p-3 text-sm text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-[#12D18E]"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              loading={loading}
-              className="w-full h-12 bg-[#12D18E] text-[#0B1220] font-bold text-base hover:bg-[#0fb87c] shadow-md gap-2"
-            >
-              <span>Confirm My Registration</span>
-              <ArrowRight className="size-4" />
-            </Button>
-          </form>
-        )}
+                <span>Reserve my place</span>
+                <ArrowRight className="size-4" />
+              </Button>
+              <p className="text-center text-xs text-muted-foreground">
+                Free to attend. No payment details required.
+              </p>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );
 }
-
